@@ -13,5 +13,5 @@ addons:
       description: "<Your project description here>"
     notification_email: diesel_baz@hotmail.com
     build_command_prepend: "mvn clean"
-    build_command:   "mvn build"
+    build_command:   "mvn compile"
     branch_pattern: coverity_scan
