@@ -215,5 +215,6 @@
     <modules>
         <module>potter</module>
         <module>rock-paper-scissors</module>
+        <module>best-route</module>
     </modules>
 </project>
