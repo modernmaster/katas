@@ -1,1 +1,17 @@
 language: java
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "qweyBp3H_N-a0Ekka1_KAA"
+
+addons:
+  coverity_scan:
+    project:
+      name: "modernmaster/katas"
+      description: "<Your project description here>"
+    notification_email: diesel_baz@hotmail.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn build"
+    branch_pattern: coverity_scan
