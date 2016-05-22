@@ -1,0 +1,21 @@
+target
+.settings
+.classpath
+.project
+.vlt
+.checkstyle
+.pmd
+.pmdruleset.xml
+node_modules
+/repository/
+repository.xml
+derby.log
+.idea
+aem
+dist
+docs
+#ignore IDEA 
+*.iml
+
+#for Jenkins
+.repository/
