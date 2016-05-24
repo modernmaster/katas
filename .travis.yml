@@ -1,15 +1,16 @@
 language: java
 env:
   global:
-  - secure: k91mYg0ND76XB1aDDWPhSPkBKKK4HDFJvBZtzaGTP491wUp1EbXgOHI6STZ4R0AMtGrH5jSkbhWnOcd0T5FY/ZWylVSrIPgZwHsQvVjuan03CMALc5vQ1a0wyo8ek2pbwP5vV5UXrrlEWJeWS0gtIfKpT2jf6dZtfhEqv8dixZSHhlqjqnGN4wk9zHXQZT5V/PXcjOhOZL2cR//JyfNHiGJE7kA2OOZmrUYwT1+ohxSg0ifdPxISq1xn2MKYAqs0YNTEeRQ7WhRzKyUFGe0wnvd0jhQ+BbUFNSgwYR8a0/V/MvdTtUCMFeFcjVkqsIS1TmJAcjQWeFNntaduE2AiOBbs1PDu4yvFgGxHg5WN/d98ZiS52PmpuU5q1UXa4KbH/xx+Tz7Rdahq9eMTBh0LqElUKrFL0a0HpGYqpkAxzaCuQUt+HOiaCGrgML2HQ4tAwIDjpyrhHezhawdCa3D7XJs6N9Bj+P2yo9ZIwHueU8Nj6C8YghrdTDuGgAUYTdSdKgvnI4ylFHZ2SjcaN39AzLUPmTUAbmrWlg0gHwz6alSu2KvTJC+rCKYjCHfSxRqRDROnYKVLMBb11XznZEk9m/inoIvDSn8kcsCuIrtYJYomaYOHwe8Slr63XtRbScYQMY1HdBjAGfp2p9+pitOzEZDPauy2ixv5TVV9/6Ia6AA=
-  matrix:
-    secure: k91mYg0ND76XB1aDDWPhSPkBKKK4HDFJvBZtzaGTP491wUp1EbXgOHI6STZ4R0AMtGrH5jSkbhWnOcd0T5FY/ZWylVSrIPgZwHsQvVjuan03CMALc5vQ1a0wyo8ek2pbwP5vV5UXrrlEWJeWS0gtIfKpT2jf6dZtfhEqv8dixZSHhlqjqnGN4wk9zHXQZT5V/PXcjOhOZL2cR//JyfNHiGJE7kA2OOZmrUYwT1+ohxSg0ifdPxISq1xn2MKYAqs0YNTEeRQ7WhRzKyUFGe0wnvd0jhQ+BbUFNSgwYR8a0/V/MvdTtUCMFeFcjVkqsIS1TmJAcjQWeFNntaduE2AiOBbs1PDu4yvFgGxHg5WN/d98ZiS52PmpuU5q1UXa4KbH/xx+Tz7Rdahq9eMTBh0LqElUKrFL0a0HpGYqpkAxzaCuQUt+HOiaCGrgML2HQ4tAwIDjpyrhHezhawdCa3D7XJs6N9Bj+P2yo9ZIwHueU8Nj6C8YghrdTDuGgAUYTdSdKgvnI4ylFHZ2SjcaN39AzLUPmTUAbmrWlg0gHwz6alSu2KvTJC+rCKYjCHfSxRqRDROnYKVLMBb11XznZEk9m/inoIvDSn8kcsCuIrtYJYomaYOHwe8Slr63XtRbScYQMY1HdBjAGfp2p9+pitOzEZDPauy2ixv5TVV9/6Ia6AA=
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "Pu8U6sq3dpp+p4oUQ4qtaIP3bXD6NidnnogIZXlgbd9SFoh4b12xM4fML4EzdF6U7BZJk3lMg8nrZ7cNvOGcTzlRyj4sOL64At1ZVvKBOboNEcpL2fPjYSrV4BlnTUym8oTvSV3ZMgjXzMJl1lZTUpG07cmTzA+F6RqOxuop9mpDju/XbqR/qudGS3d7Up4MOjahbNj5edLy4mWNUXRlCwdlcJjWuXmKZub9MG0ChO5CtzoRH2h7ZlTCfzx9CAOaqaOpdpxF99BVEnFc+ckAs5jKuw2hfisKzXXLRHxJh95VoI5KOBf/2fMvYTS7mObPQgHJUs04mzh/M56i0CwIZqby98xE7oZSxkYNapZOC3m2GloJS/8WlEcrqD2KKRd2ZtdbxQxlGv2QDaqiOfPIQMvh77B8WwJVKQjE0bGgCw07g2UmLg6qs3No7655oelvqQfkr/jtIiUI0Bz1hoKfBgg/w4GopjQS1x1txN41mVYjN7VczivDUU3ac8k9OHMfOp+tGHPjWIHj0OT5qPQdM8ZDJ/sTVqTMCMBFpsWs56uqT64P5yUeEi7TR0ahAxnPx3ewiWMIYOzvKGxbsO2vAV+9j1p2NDIBoSK7d+4j7pCVVg+yG3tSy3+XaXg7niMMEnL6vx7TAIsFtuqev2aGQbB3xJXF0OYv7/nxfeKEq/c="
+
 addons:
   coverity_scan:
     project:
-      name: modernmaster/katas
-      description: <Your project description here>
+      name: "modernmaster/katas"
+      description: "Build submitted via Travis CI"
     notification_email: diesel_baz@hotmail.com
-    build_command_prepend: mvn clean
-    build_command: mvn compile
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
     branch_pattern: coverity_scan
