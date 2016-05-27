@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/modernmaster/katas.png?label=ready&title=Ready)](https://waffle.io/modernmaster/katas)
 # potter
 Potter Kata
 
