@@ -21,6 +21,9 @@ public class Gesture {
 
     @Override
     public boolean equals(final Object obj) {
+        if(obj == null || obj.getClass() != Gesture.class) {
+            return false;
+        }
         if (Gesture.class.equals(obj.getClass())) {
             Gesture gesture = (Gesture) obj;
             return gesture.name.equals(name);
