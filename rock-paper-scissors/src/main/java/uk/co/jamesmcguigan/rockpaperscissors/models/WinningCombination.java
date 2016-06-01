@@ -31,12 +31,12 @@ public class WinningCombination {
 
     @Override
     public boolean equals(final Object obj) {
-        if (Gesture.class.equals(obj.getClass())) {
-            Gesture winningCombinationGesture = (Gesture) obj;
-            return winningGesture.getName().equals(
-                    winningCombinationGesture.getName());
+        if(obj == null || obj.getClass() != Gesture.class) {
+            return false;
         }
-        return false;
+        Gesture winningCombinationGesture = (Gesture) obj;
+        return winningGesture.getName().equals(
+                winningCombinationGesture.getName());
     }
 
     @Override
