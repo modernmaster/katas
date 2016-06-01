@@ -1,9 +1,8 @@
 package uk.co.mcguigan.trains;
 
 import static java.lang.Integer.MAX_VALUE;
-import static java.lang.Integer.compare;
 
-public class Station implements Vertex, Comparable<Vertex> {
+public class Station implements Vertex {
     private final String name;
     private Edge[] emanatingEdges;
     private Integer minDistance;
@@ -35,9 +34,5 @@ public class Station implements Vertex, Comparable<Vertex> {
 
     public String toString() {
         return name;
-    }
-
-    public int compareTo(final Vertex other) {
-        return compare(minDistance, other.getMinimumDistance());
     }
 }
