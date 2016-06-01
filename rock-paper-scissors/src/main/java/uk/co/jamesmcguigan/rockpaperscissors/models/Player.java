@@ -22,6 +22,9 @@ public class Player {
 
     @Override
     public boolean equals(final Object obj) {
+        if(obj==null || !obj.getClass().equals(Player.class)) {
+            return false;
+        }
         Player player = (Player) obj;
         return player.getIsHuman() == getIsHuman()
                 && player.getGesture().getName().equals(getGesture().getName());
