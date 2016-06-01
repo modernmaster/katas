@@ -22,7 +22,7 @@ public class Player {
 
     @Override
     public boolean equals(final Object obj) {
-        if(obj==null || !obj.getClass().equals(Player.class)) {
+        if(obj==null || obj.getClass() != Player.class) {
             return false;
         }
         Player player = (Player) obj;
