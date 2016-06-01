@@ -13,3 +13,4 @@ Potter Kata
 [coverage]: https://codeclimate.com/github/modernmaster/katas/coverage
 [issues]: https://codeclimate.com/github/modernmaster/katas
 [coverity]: https://scan.coverity.com/projects/modernmaster-katas
+[![Throughput Graph](https://graphs.waffle.io/modernmaster/katas/throughput.svg)](https://waffle.io/modernmaster/katas/metrics/throughput)
