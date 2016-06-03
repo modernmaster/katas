@@ -32,13 +32,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
                 <version>4.2.6.RELEASE</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.17</version>
-                <scope>provided</scope>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -70,7 +69,7 @@
                 <groupId>jstl</groupId>
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
-                <scope>provided</scope>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.easymock</groupId>
