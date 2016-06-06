@@ -3,9 +3,9 @@
 [![Code Climate](https://codeclimate.com/github/modernmaster/katas/badges/gpa.svg)][codeclimate]
 [![Coverity](https://scan.coverity.com/projects/8939/badge.svg)][coverity]
 [![Code Coverage](https://codecov.io/gh/modernmaster/katas/branch/master/graph/badge.svg)][codecov]
-[![Stories in Ready](https://badge.waffle.io/modernmaster/katas.png?label=ready&title=Ready)][stories]
 [![Issue Count](https://codeclimate.com/github/modernmaster/katas/badges/issue_count.svg)][issues]
 [![Throughput Graph](https://graphs.waffle.io/modernmaster/katas/throughput.svg)][waffle]
+[![Stories in Ready](https://badge.waffle.io/modernmaster/katas.png?label=ready&title=Ready)][stories]
 
 [travis]: http://travis-ci.org/modernmaster/katas
 [codeclimate]: https://codeclimate.com/github/modernmaster/katas
@@ -31,19 +31,25 @@ A selection of kata implementations that demonstrate awesomeness.
 
 * [1. Katas] (#1-katas)
     * [1.1 Fizz Buzz](#11-fizz-buzz)
+        * [1.1.1 Problem Description](#111-problem-description)
+        * [1.1.2 Expected Output](#112-expected-output)
     * [1.2 Potter](#12-potter)
+        * [1.2.1 Problem Description](#111-problem-description)
+        * [1.2.2 Expected Output](#112-expected-output)
     * [1.3 Trains](#13-trains)
+        * [1.3.1 Problem Description](#111-problem-description)
+        * [1.3.2 Expected Output](#112-expected-output)
     * [1.4 Rock Paper Scissors](#14-rock-paper-scissors)
 * [2. Testing] (#2-testing)
 * [3. Development] (#3-development)
 * [4. Contributing] (#4-contributing)
 * [5. Copyright] (#4-copyright)
 
-## Katas
+## 1 Katas
 
-### Fizz Buzz
+### 1.1 Fizz Buzz
 
-#### Problem Description
+#### 1.1.1 Problem Description
 
 Imagine the scene. You are eleven years old, and in the five minutes before the end of the lesson, your Maths teacher decides he should make his class more "fun" by introducing a "game". He explains that he is going to point at each pupil in turn and ask them to say the next number in sequence, starting from one. The "fun" part is that if the number is divisible by three, you instead say "Fizz" and if it is divisible by five you say "Buzz". So now your maths teacher is pointing at all of your classmates in turn, and they happily shout "one!", "two!", "Fizz!", "four!", "Buzz!"... until he very deliberately points at you, fixing you with a steely gaze... time stands still, your mouth dries up, your palms become sweatier and sweatier until you finally manage to croak "Fizz!". Doom is avoided, and the pointing finger moves on.
 
@@ -51,7 +57,7 @@ So of course in order to avoid embarassment infront of your whole class, you hav
 
 Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz?".
 
-#### Expected Output
+#### 1.1.2 Expected Output
 
 1
 2
@@ -79,9 +85,9 @@ Stage 2 - new requirements
  * A number is fizz if it is divisible by 3 or if it has a 3 in it
  * A number is buzz if it is divisible by 5 or if it has a 5 in it
 
-### Potter
+### 1.2 Potter
 
-#### Problem Description
+#### 1.2.1 Problem Description
 
 Once upon a time there was a series of 5 books about a very English hero called Harry. (At least when this Kata was invented, there were only 5. Since then they have multiplied) Children all over the world thought he was fantastic, and, of course, so did the publisher. So in a gesture of immense generosity to mankind, (and to increase sales) they set up the following pricing model to take advantage of Harry's magical powers.
 
@@ -91,7 +97,7 @@ Note that if you buy, say, four books, of which 3 are different titles, you get 
 
 Potter mania is sweeping the country and parents of teenagers everywhere are queueing up with shopping baskets overflowing with Potter books. Your mission is to write a piece of code to calculate the price of any conceivable shopping basket, giving as big a discount as possible.
 
-#### Expected Output
+#### 1.2.2 Expected Output
 
 For example, how much does this basket of books cost?
 
@@ -102,9 +108,9 @@ For example, how much does this basket of books cost?
   1 copy of the fifth book
 (answer: 51.20 EUR)
 
-### Trains - Best route
+### 1.3 Trains - Best route
 
-#### Problem Description
+#### 1.3.1 Problem Description
 
 The local commuter railroad services a number of towns in Kiwiland.  Because of monetary concerns, all of the tracks are 'one-way.'  That is, a route from Kaitaia to Invercargill does not imply the existence of a route from Invercargill to Kaitaia.  In fact, even if both of these routes do happen to exist, they are distinct and are not necessarily the same distance!
 
@@ -124,7 +130,7 @@ The length of the shortest route (in terms of distance to travel) from A to C.
 The length of the shortest route (in terms of distance to travel) from B to B.
 The number of different routes from C to C with a distance of less than 30.  In the sample data, the trips are: CDC, CEBC, CEBCDC, CDCEBC, CDEBC, CEBCEBC, CEBCEBCEBC.
 
-#### Expected Output
+#### 1.3.2 Expected Output
 
 For the test input, the towns are named using the first few letters of the alphabet from A to D.  A route between two towns (A to B) with a distance of 5 is represented as AB5.
 Graph: AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7
@@ -140,9 +146,9 @@ Output #8: 9
 Output #9: 9
 Output #10: 7
 
-### Rock Paper Scissors
+### 1.4 Rock Paper Scissors
 
-#### Problem Description
+#### 1.4.1 Problem Description
 
 +--------------------------------------------------+
 
@@ -175,18 +181,18 @@ Output #10: 7
 +--------------------------------------------------+
 
 
-## Testing
+## 2 Testing
 
 -- TBD
 
-## Development
+## 3 Development
 
 Questions or problems? Please post them on the [issue tracker](https://github.com/piotrmurach/github/issues). You can contribute changes by forking the project and submitting a pull request.
 
-## Contributing
+## 4 Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/piotrmurach/github. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## Copyright
+## 5 Copyright
 
 Copyright (c) 2012-2016 James McGuigan.  See LICENSE for further details.
