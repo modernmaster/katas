@@ -13,8 +13,8 @@
 [stories]: https://waffle.io/modernmaster/katas
 [coverity]: https://scan.coverity.com/projects/modernmaster-katas
 [codecov]: https://codecov.io/gh/modernmaster/katas
-[waffle]: https://waffle.io/modernmaster/katas/metrics/throughput
 
+[waffle]: https://waffle.io/modernmaster/katas/metrics/throughput
 [Website](http://www.jamesmcguigan.co.uk/) | [Wiki](https://github.com/modernmaster/katas/wiki)
 
 A selection of kata implementations that demonstrate awesomeness.
@@ -59,10 +59,10 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 
 #### 1.1.2 Expected Output
 
-1
-2
-Fizz
-4
+  1
+  2
+  Fizz
+  4
 Buzz
 Fizz
 7
