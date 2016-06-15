@@ -1,25 +1,52 @@
 package uk.co.jamesmcguigan.rockpaperscissors.AcceptanceTests.Stepdefs;
 
+import com.saucelabs.common.SauceOnDemandAuthentication;
+import com.saucelabs.common.SauceOnDemandSessionIdProvider;
+import com.saucelabs.junit.SauceOnDemandTestWatcher;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import cucumber.annotation.After;
-import cucumber.annotation.Before;
-import cucumber.annotation.en.Given;
-import cucumber.annotation.en.Then;
-import cucumber.annotation.en.When;
+import java.net.URL;
 
-public class PaperRockScissorsSteps {
+public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
+
+    public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USER_NAME, KEY);
+
+	@Rule
+	public SauceOnDemandTestWatcher resultReportingTestWatcher = new SauceOnDemandTestWatcher(this, authentication);
+
+	private static final String TRAVIS = "TRAVIS";
+	private static final String USER_NAME = "modernmaster";
+	private static final String KEY = "51ad2d68-61b9-4b0d-aac3-198713991a44";
+	private static final String URL = String.format("http://%s:%s@ondemand.saucelabs.com:80/wd/hub", USER_NAME, KEY);
 
 	private WebDriver webDriver;
+    private SessionId sessionId;
 
 	@Before
-	public void initSelenium() throws Exception {
-		webDriver = new FirefoxDriver();
+	public void initSelenium(Scenario scenario) throws Throwable {
+		DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
+		desiredCapabilities.setCapability("platform", "Windows XP");
+		desiredCapabilities.setCapability("version", "43.0");
+		desiredCapabilities.setCapability("build", System.getenv("TRAVIS_BUILD_NUMBER"));
+		desiredCapabilities.setCapability("tunnel-identifier", System.getenv("TRAVIS_JOB_NUMBER"));
+		desiredCapabilities.setCapability("name", "Rock Paper Scissors Test:"+ scenario.getName());
+		this.webDriver = new RemoteWebDriver(new URL(URL), desiredCapabilities);
+		this.sessionId = ((RemoteWebDriver) webDriver).getSessionId();
 	}
 
 	@Given("^a new game of rock, paper, scissors$")
@@ -32,7 +59,7 @@ public class PaperRockScissorsSteps {
 		webDriver.findElement(By.id("player1-human")).click();
 		Assert.assertTrue(webDriver.findElement(By.id("player1Gesture"))
 				.isDisplayed());
-	}
+    }
 
 	@Given("^Player (\\d+) is the Computer$")
 	public void Player_is_the_Computer(int arg1) {
@@ -90,8 +117,13 @@ public class PaperRockScissorsSteps {
 		Assert.assertFalse(game1.equals(game2) && game2.equals(game3));
 	}
 
-	@After
-	public void destroySelenium() {
+    @After
+	public void destroySelenium(Scenario scenario) {
+        ((JavascriptExecutor)webDriver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
 		webDriver.quit();
 	}
+
+    public String getSessionId() {
+        return sessionId.toString();
+    }
 }
