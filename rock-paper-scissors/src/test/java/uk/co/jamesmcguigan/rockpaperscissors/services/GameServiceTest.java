@@ -15,7 +15,6 @@ public class GameServiceTest {
 	}
 
 	@Test
-	@Ignore
 	public void testCalculateASuccessfulResultOfGame()
 	{
 		//Given
