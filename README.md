@@ -4,6 +4,8 @@
 [![Coverity](https://scan.coverity.com/projects/8939/badge.svg)][coverity]
 [![Code Coverage](https://codecov.io/gh/modernmaster/katas/branch/master/graph/badge.svg)][codecov]
 [![Issue Count](https://codeclimate.com/github/modernmaster/katas/badges/issue_count.svg)][issues]
+[![Sauce Test Status](https://saucelabs.com/buildstatus/modernmaster)][atstatus]
+[![Sauce Coverage Matrix](https://saucelabs.com/browser-matrix/modernmaster.svg)][atstatuscoverage]
 [![Throughput Graph](https://graphs.waffle.io/modernmaster/katas/throughput.svg)][waffle]
 [![Stories in Ready](https://badge.waffle.io/modernmaster/katas.png?label=ready&title=Ready)][stories]
 
@@ -13,6 +15,8 @@
 [stories]: https://waffle.io/modernmaster/katas
 [coverity]: https://scan.coverity.com/projects/modernmaster-katas
 [codecov]: https://codecov.io/gh/modernmaster/katas
+[atstatus]: https://saucelabs.com/u/modernmaster
+[atstatuscoverage]: https://saucelabs.com/u/modernmaster
 
 [waffle]: https://waffle.io/modernmaster/katas/metrics/throughput
 [Website](http://www.jamesmcguigan.co.uk/) | [Wiki](https://github.com/modernmaster/katas/wiki)
