@@ -1,6 +1,6 @@
 package uk.co.jamesmcguigan.rockpaperscissors.services;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,7 +15,6 @@ public class GameServiceTest {
 	}
 
 	@Test
-	@Ignore
 	public void testCalculateASuccessfulResultOfGame()
 	{
 		//Given

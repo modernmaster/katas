@@ -13,9 +13,9 @@ public class WinningCombinationBuilder {
 
     public WinningCombinationBuilder() {
         winningCombinations = new LinkedList<WinningCombination>();
-        rock = new Gesture("rock");
-        paper = new Gesture("paper");
-        scissors = new Gesture("scissors");
+        rock = new Gesture("Rock");
+        paper = new Gesture("Paper");
+        scissors = new Gesture("Scissors");
     }
 
     public void createWinningCombination() {
