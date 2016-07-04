@@ -156,7 +156,8 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <finalName>${project.artifactId}_${project.version}</finalName>
+                    <!--<finalName>${project.artifactId}_${project.version}</finalName>-->
+                    <finalName>${project.artifactId}</finalName>
                 </configuration>
             </plugin>
             <plugin>
