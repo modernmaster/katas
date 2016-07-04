@@ -5,7 +5,7 @@
 
     "package": {
         "name": "katas", // Bintray package name
-        "repo": "katas", // Bintray repository name
+        "repo": "maven", // Bintray repository name
         "subject": "modernmaster", // Bintray subject (user or organization)
         "desc": "I was pushed completely automatically",
         "website_url": "www.jamesmcguigan.co.uk",
