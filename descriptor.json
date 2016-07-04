@@ -54,7 +54,7 @@
 
     "files":
         [
-        {"includePattern": "fizz-buzz/target/fizz-buzz_.*.jar", "excludePattern": "target/.*.zip$", "uploadPattern": "/$1"}
+        {"includePattern": "fizz-buzz/target/(.*\\.jar)", "excludePattern": "target/.*.zip$", "uploadPattern": "/$1"}
         ],
     "publish": true
 }
