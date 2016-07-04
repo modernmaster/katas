@@ -17,6 +17,12 @@
     <properties>
         <multiproject.basedir>${project.basedir}</multiproject.basedir>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <url>https://api.bintray.com/maven/modernmaster/katas/${project.version</url>
+        </repository>
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -186,6 +192,20 @@
  			</plugin>			
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <!--<finalName>${project.artifactId}_${project.version}</finalName>-->
+                    <finalName>${project.artifactId}</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.17</version>
                 <executions>
@@ -194,6 +214,7 @@
                         <phase>validate</phase>
                         <configuration>
                             <configLocation>${multiproject.basedir}/config/checkstyles.xml</configLocation>
+                            <suppressionsLocation>${multiproject.basedir}/config/suppressions.xml</suppressionsLocation>
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>

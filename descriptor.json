@@ -54,7 +54,9 @@
 
     "files":
         [
-        {"includePattern": "target/(.*)", "excludePattern": "target/.*.zip$", "uploadPattern": "/$1"}
+            {"includePattern": "fizz-buzz/target/(.*\\.jar)", "excludePattern": "target/.*.zip$", "uploadPattern": "/katas/$1"},
+            {"includePattern": "best-route/target/(.*\\.jar)", "excludePattern": "target/.*.zip$", "uploadPattern": "/katas/$1"},
+            {"includePattern": "potter/target/(.*\\.jar)", "excludePattern": "target/.*.zip$", "uploadPattern": "/katas/$1"}
         ],
     "publish": true
 }
