@@ -1,26 +1,28 @@
 language: java
 env:
   global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "Pu8U6sq3dpp+p4oUQ4qtaIP3bXD6NidnnogIZXlgbd9SFoh4b12xM4fML4EzdF6U7BZJk3lMg8nrZ7cNvOGcTzlRyj4sOL64At1ZVvKBOboNEcpL2fPjYSrV4BlnTUym8oTvSV3ZMgjXzMJl1lZTUpG07cmTzA+F6RqOxuop9mpDju/XbqR/qudGS3d7Up4MOjahbNj5edLy4mWNUXRlCwdlcJjWuXmKZub9MG0ChO5CtzoRH2h7ZlTCfzx9CAOaqaOpdpxF99BVEnFc+ckAs5jKuw2hfisKzXXLRHxJh95VoI5KOBf/2fMvYTS7mObPQgHJUs04mzh/M56i0CwIZqby98xE7oZSxkYNapZOC3m2GloJS/8WlEcrqD2KKRd2ZtdbxQxlGv2QDaqiOfPIQMvh77B8WwJVKQjE0bGgCw07g2UmLg6qs3No7655oelvqQfkr/jtIiUI0Bz1hoKfBgg/w4GopjQS1x1txN41mVYjN7VczivDUU3ac8k9OHMfOp+tGHPjWIHj0OT5qPQdM8ZDJ/sTVqTMCMBFpsWs56uqT64P5yUeEi7TR0ahAxnPx3ewiWMIYOzvKGxbsO2vAV+9j1p2NDIBoSK7d+4j7pCVVg+yG3tSy3+XaXg7niMMEnL6vx7TAIsFtuqev2aGQbB3xJXF0OYv7/nxfeKEq/c="
-
+  - secure: Pu8U6sq3dpp+p4oUQ4qtaIP3bXD6NidnnogIZXlgbd9SFoh4b12xM4fML4EzdF6U7BZJk3lMg8nrZ7cNvOGcTzlRyj4sOL64At1ZVvKBOboNEcpL2fPjYSrV4BlnTUym8oTvSV3ZMgjXzMJl1lZTUpG07cmTzA+F6RqOxuop9mpDju/XbqR/qudGS3d7Up4MOjahbNj5edLy4mWNUXRlCwdlcJjWuXmKZub9MG0ChO5CtzoRH2h7ZlTCfzx9CAOaqaOpdpxF99BVEnFc+ckAs5jKuw2hfisKzXXLRHxJh95VoI5KOBf/2fMvYTS7mObPQgHJUs04mzh/M56i0CwIZqby98xE7oZSxkYNapZOC3m2GloJS/8WlEcrqD2KKRd2ZtdbxQxlGv2QDaqiOfPIQMvh77B8WwJVKQjE0bGgCw07g2UmLg6qs3No7655oelvqQfkr/jtIiUI0Bz1hoKfBgg/w4GopjQS1x1txN41mVYjN7VczivDUU3ac8k9OHMfOp+tGHPjWIHj0OT5qPQdM8ZDJ/sTVqTMCMBFpsWs56uqT64P5yUeEi7TR0ahAxnPx3ewiWMIYOzvKGxbsO2vAV+9j1p2NDIBoSK7d+4j7pCVVg+yG3tSy3+XaXg7niMMEnL6vx7TAIsFtuqev2aGQbB3xJXF0OYv7/nxfeKEq/c=
 addons:
   sauce_connect:
-    username: "modernmaster"
+    username: modernmaster
     access_key:
-      secure: "zbkwnLfErAaWSdpuSX/2fc+t2PoMSEZe/HVXK7VyxUv/QBU0zn9gpn6Xfj/6vrBpFzWVCWWW+oolmeBzvjUTvO6U5L5ih31Dzokq1b9g+vHF5cjm82ZsZOFaPu95wjg2RKIayjgTNFkfg/Iach78MlIykIGoJzIXvcSoHQpEx2iEwpTPcl70IpFlyF9h3rCRsmef3QXganWKqLMuIWjArzZpXvGpdPHu8X5DARZw+FUZ636BtG2j+igZTzu7UWAW66tpvHatAI+zD5cuaRTH4CCGe7PX9EUSdZ9oSaNbf9XYeHpl8WjcJhcbkz2ScdEbrgXWuSpQZyNx7uBcz6TnLDu/kERgbrOyePdHBddAX1jzwuJA9BPukPgTOyCREeWHlnpA5Q299KYYvoF2HhvhgzomiOts51BMU6+k0kP05oviZ8UZX/Re8wSl+uPEsmMM/Z6BvZCGGnixLvJi/PY1qbJhESS4o176Id7NVDe6UVoP44NiK5VD245E1gZyC2ntzfnLvxQFuZLKYDdbuXchSdinxgaQi3WNt9nO/lZi3SfSpMpJlt9T7LjYDeuuL+ae1MHvso5EQRyuRDc6TmCn7GKMslsXwvsjwmg0lnauUcaUSUXJosEHFwUHTR1ppzd59dzRJCJpHhAZqzRCuZP+Bz5dS23zHmg7pvAcru3tziA="
+      secure: zbkwnLfErAaWSdpuSX/2fc+t2PoMSEZe/HVXK7VyxUv/QBU0zn9gpn6Xfj/6vrBpFzWVCWWW+oolmeBzvjUTvO6U5L5ih31Dzokq1b9g+vHF5cjm82ZsZOFaPu95wjg2RKIayjgTNFkfg/Iach78MlIykIGoJzIXvcSoHQpEx2iEwpTPcl70IpFlyF9h3rCRsmef3QXganWKqLMuIWjArzZpXvGpdPHu8X5DARZw+FUZ636BtG2j+igZTzu7UWAW66tpvHatAI+zD5cuaRTH4CCGe7PX9EUSdZ9oSaNbf9XYeHpl8WjcJhcbkz2ScdEbrgXWuSpQZyNx7uBcz6TnLDu/kERgbrOyePdHBddAX1jzwuJA9BPukPgTOyCREeWHlnpA5Q299KYYvoF2HhvhgzomiOts51BMU6+k0kP05oviZ8UZX/Re8wSl+uPEsmMM/Z6BvZCGGnixLvJi/PY1qbJhESS4o176Id7NVDe6UVoP44NiK5VD245E1gZyC2ntzfnLvxQFuZLKYDdbuXchSdinxgaQi3WNt9nO/lZi3SfSpMpJlt9T7LjYDeuuL+ae1MHvso5EQRyuRDc6TmCn7GKMslsXwvsjwmg0lnauUcaUSUXJosEHFwUHTR1ppzd59dzRJCJpHhAZqzRCuZP+Bz5dS23zHmg7pvAcru3tziA=
   coverity_scan:
     project:
-      name: "modernmaster/katas"
-      description: "Build submitted via Travis CI"
+      name: modernmaster/katas
+      description: Build submitted via Travis CI
     notification_email: diesel_baz@hotmail.com
-    build_command_prepend: "mvn clean"
-    build_command:   "mvn -DskipTests=true compile"
+    build_command_prepend: mvn clean
+    build_command: mvn -DskipTests=true compile
     branch_pattern: master
-
 script:
 - mvn verify
-
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: bintray
+  file: descriptor.json
+  user: modernmaster
+  key:
+    secure: BW9BmT1PRqco+PVSrkSQnj6osnJEZnDtYQ5nJg6nUbXpqH2aqxC5+XEPbO43yuBYpHIc/slLg8KWxAYTXqiTmmSmy1voujwruMjYEq+w+tnxNr3HPK7vEaJxq3Vh/mMGxuG2Zkv6Qa4w9Aogz0PkyKXwaOT/XuJp6q1eIMdvp7f+qoeUpCHfuNHrQlY9XCSgbqSfEwsDsT6BwWoKNOzDELhh9ZOeKeK911+DsFvyeImnEbc7/89nkkB92bJJN8lg8AcRMYtmDua4bqw4Y/LHe9VzQt+01AcgTKTlsonVaPBk3LTjGT5hFgohr275vhI0CrAbhUNMy+i92JPJQDfoy/mfft2b7amtyuG1KnbjL7Os+k7mP0+HcEqnbkWtmHXEUiWPpIWI1yT1cxD4uIKx0amK0bUzIrRiScyHY+MaIlnodcUSurWcvTIWUzSR9laewSdJJJ1Se1kyuuYQiyyE17g+0MZhf7xfkHxb8FAT7VZqegpFGnecDFadvrQK/cRD/33llSgvXaQHRMSIf4nZvFhwoN97ZlgCzC8Mvx2QGu7LRTKndbMEVoI986luA5Nemqhmq5nA3NqSmbcqDP6Yc/+MOVdbGVd1nC88Y+ZAUKYIsRuRv96qAh6Qcmf1lOJ/2c0xVu+dnfOkXqtgtSO25ovLWZUjyTtVQCiQPXVpo8s=
+  on: 41-BintrayIntegration
