@@ -153,6 +153,14 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <finalName>${project.artifactId}_${project.version}</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.17</version>
                 <executions>
@@ -161,6 +169,7 @@
                         <phase>validate</phase>
                         <configuration>
                             <configLocation>${multiproject.basedir}/config/checkstyles.xml</configLocation>
+                            <suppressionsLocation>${multiproject.basedir}/config/suppressions.xml</suppressionsLocation>
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
