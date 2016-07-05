@@ -17,6 +17,7 @@
   <scm>
     <connection>scm:git:git@github.com:modernmaster/katas.git</connection>
     <developerConnection>scm:git:git@github.com:modernmaster/katas.git</developerConnection>
+    <tag>0.0.2</tag>
     <url>git@github.com:modernmaster/katas.git</url>
   </scm>
   <distributionManagement>

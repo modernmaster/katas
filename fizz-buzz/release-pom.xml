@@ -9,6 +9,7 @@
   <scm>
     <connection>scm:git:git@github.com:modernmaster/katas.git/fizz-buzz</connection>
     <developerConnection>scm:git:git@github.com:modernmaster/katas.git/fizz-buzz</developerConnection>
+    <tag>0.0.2</tag>
     <url>git@github.com:modernmaster/katas.git/fizz-buzz</url>
   </scm>
   <distributionManagement>
