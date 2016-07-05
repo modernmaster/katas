@@ -11,7 +11,7 @@
         <developerConnection>scm:git:git@github.com:modernmaster/katas.git</developerConnection>
         <connection>scm:git:git@github.com:modernmaster/katas.git</connection>
         <url>git@github.com:modernmaster/katas.git</url>
-        <tag>katas-0.0.3</tag>
+        <tag>HEAD</tag>
     </scm>
     <properties>
         <multiproject.basedir>${project.basedir}</multiproject.basedir>
@@ -19,7 +19,7 @@
     <distributionManagement>
         <repository>
             <id>bintray</id>
-            <url>https://api.bintray.com/maven/modernmaster/katas/${project.version}</url>
+            <url>https://api.bintray.com/maven/modernmaster/katas/</url>
         </repository>
     </distributionManagement>
     <profiles>
