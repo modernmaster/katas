@@ -4,14 +4,14 @@
     <groupId>uk.co.mcguigan</groupId>
     <artifactId>katas</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
     <name>katas</name>
     <url>http://maven.apache.org</url>
     <scm>
         <developerConnection>scm:git:git@github.com:modernmaster/katas.git</developerConnection>
         <connection>scm:git:git@github.com:modernmaster/katas.git</connection>
         <url>git@github.com:modernmaster/katas.git</url>
-        <tag>katas-0.0.3</tag>
+        <tag>katas-0.0.4</tag>
     </scm>
     <properties>
         <multiproject.basedir>${project.basedir}</multiproject.basedir>
