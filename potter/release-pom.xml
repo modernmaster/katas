@@ -9,6 +9,7 @@
   <scm>
     <connection>scm:git:git@github.com:modernmaster/katas.git/potter</connection>
     <developerConnection>scm:git:git@github.com:modernmaster/katas.git/potter</developerConnection>
+    <tag>0.0.2</tag>
     <url>git@github.com:modernmaster/katas.git/potter</url>
   </scm>
   <distributionManagement>

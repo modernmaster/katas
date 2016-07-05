@@ -9,6 +9,7 @@
   <scm>
     <connection>scm:git:git@github.com:modernmaster/katas.git/best-route</connection>
     <developerConnection>scm:git:git@github.com:modernmaster/katas.git/best-route</developerConnection>
+    <tag>0.0.2</tag>
     <url>git@github.com:modernmaster/katas.git/best-route</url>
   </scm>
   <distributionManagement>

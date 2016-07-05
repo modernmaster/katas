@@ -11,6 +11,7 @@
   <scm>
     <connection>scm:git:git@github.com:modernmaster/katas.git/rock-paper-scissors</connection>
     <developerConnection>scm:git:git@github.com:modernmaster/katas.git/rock-paper-scissors</developerConnection>
+    <tag>0.0.2</tag>
     <url>git@github.com:modernmaster/katas.git/rock-paper-scissors</url>
   </scm>
   <distributionManagement>
