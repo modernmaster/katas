@@ -189,13 +189,15 @@ Output #10: 7
 
 -- TBD
 
+Security scanned using https://status.srcclr.net/
+
 ## 3 Development
 
-Questions or problems? Please post them on the [issue tracker](https://github.com/piotrmurach/github/issues). You can contribute changes by forking the project and submitting a pull request.
+Questions or problems? Please post them on the [issue tracker](https://waffle.io/modernmaster/katas). You can contribute changes by forking the project and submitting a pull request.
 
 ## 4 Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/piotrmurach/github. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/modernmaster/katas. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## 5 Copyright
 
