@@ -1,6 +1,7 @@
 # Katas
 [![Build Status](https://travis-ci.org/modernmaster/katas.svg?branch=master)][travis]
 [![Code Climate](https://codeclimate.com/github/modernmaster/katas/badges/gpa.svg)][codeclimate]
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6bf45eaa847045a68d522379a8a66ed9)][codequality]
 [![Coverity](https://scan.coverity.com/projects/8939/badge.svg)][coverity]
 [![Code Coverage](https://codecov.io/gh/modernmaster/katas/branch/master/graph/badge.svg)][codecov]
 [![Issue Count](https://codeclimate.com/github/modernmaster/katas/badges/issue_count.svg)][issues]
@@ -14,6 +15,7 @@
 [issues]: https://codeclimate.com/github/modernmaster/katas
 [stories]: https://waffle.io/modernmaster/katas
 [coverity]: https://scan.coverity.com/projects/modernmaster-katas
+[codequality]: https://www.codacy.com/app/James-McGuiganOrganization/katas?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=modernmaster/katas&amp;utm_campaign=Badge_Grade
 [codecov]: https://codecov.io/gh/modernmaster/katas
 [atstatus]: https://saucelabs.com/u/modernmaster
 [atstatuscoverage]: https://saucelabs.com/u/modernmaster
