@@ -151,6 +151,20 @@
     <build>
         <finalName>katas</finalName>
         <plugins>
+			<plugin>
+ 				<groupId>com.srcclr</groupId>
+ 				<artifactId>srcclr-maven-plugin</artifactId>
+ 				<version>2.0.4</version>
+ 				<configuration/>
+ 				<executions>
+ 					<execution>
+ 						<phase>verify</phase>
+ 						<goals>
+ 							<goal>scan</goal>
+ 						</goals>
+ 					</execution>
+ 				</executions>
+ 			</plugin>			
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
