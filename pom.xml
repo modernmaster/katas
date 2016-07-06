@@ -152,6 +152,25 @@
         <finalName>katas</finalName>
         <plugins>
 			<plugin>
+			  <groupId>org.jacoco</groupId>
+			  <artifactId>jacoco-maven-plugin</artifactId>
+			  <version>0.7.5.201505241946</version>
+			  <executions>
+				<execution>
+				  <goals>
+					<goal>prepare-agent</goal>
+				  </goals>
+				</execution>
+				<execution>
+				  <id>report</id>
+				  <phase>test</phase>
+				  <goals>
+					<goal>report</goal>
+				  </goals>
+				</execution>
+			  </executions>
+			</plugin>		
+			<plugin>
  				<groupId>com.srcclr</groupId>
  				<artifactId>srcclr-maven-plugin</artifactId>
  				<version>2.0.4</version>
