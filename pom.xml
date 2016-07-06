@@ -14,12 +14,13 @@
         <tag>HEAD</tag>
     </scm>
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <multiproject.basedir>${project.basedir}</multiproject.basedir>
     </properties>
     <distributionManagement>
         <repository>
             <id>bintray</id>
-            <url>https://api.bintray.com/maven/modernmaster/katas/</url>
+            <url>https://api.bintray.com/maven/modernmaster/maven/katas/;publish=1</url>
         </repository>
     </distributionManagement>
     <profiles>
