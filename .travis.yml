@@ -21,7 +21,7 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 
 before_deploy:
-- mvn compile
+- mvn release\:prepare -B
 
 deploy:
   skip_cleanup: true
