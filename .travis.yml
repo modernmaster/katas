@@ -19,15 +19,13 @@ script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-
 before_deploy:
 - mvn release\:prepare -B
-
 deploy:
-  skip_cleanup: true
-  provider: bintray
-  file: descriptor.json
-  user: modernmaster
-  key:
-    secure: BW9BmT1PRqco+PVSrkSQnj6osnJEZnDtYQ5nJg6nUbXpqH2aqxC5+XEPbO43yuBYpHIc/slLg8KWxAYTXqiTmmSmy1voujwruMjYEq+w+tnxNr3HPK7vEaJxq3Vh/mMGxuG2Zkv6Qa4w9Aogz0PkyKXwaOT/XuJp6q1eIMdvp7f+qoeUpCHfuNHrQlY9XCSgbqSfEwsDsT6BwWoKNOzDELhh9ZOeKeK911+DsFvyeImnEbc7/89nkkB92bJJN8lg8AcRMYtmDua4bqw4Y/LHe9VzQt+01AcgTKTlsonVaPBk3LTjGT5hFgohr275vhI0CrAbhUNMy+i92JPJQDfoy/mfft2b7amtyuG1KnbjL7Os+k7mP0+HcEqnbkWtmHXEUiWPpIWI1yT1cxD4uIKx0amK0bUzIrRiScyHY+MaIlnodcUSurWcvTIWUzSR9laewSdJJJ1Se1kyuuYQiyyE17g+0MZhf7xfkHxb8FAT7VZqegpFGnecDFadvrQK/cRD/33llSgvXaQHRMSIf4nZvFhwoN97ZlgCzC8Mvx2QGu7LRTKndbMEVoI986luA5Nemqhmq5nA3NqSmbcqDP6Yc/+MOVdbGVd1nC88Y+ZAUKYIsRuRv96qAh6Qcmf1lOJ/2c0xVu+dnfOkXqtgtSO25ovLWZUjyTtVQCiQPXVpo8s=
-  on: 41-BintrayIntegration
+  provider: releases
+  api_key:
+    secure: 0z6hUya3W8j5TurgNT2E4uN5QCCs1AZkPfSORxvNXIrn5a9OA7JN2lnvSXIroBfwbul8Ioohqcx5SASF3i5ZJ1Ew6Otr8yLWQmXHgNDmLwcFNM6Ao275amojb/5Al/RsP+dP7Eewfd2rnz+mc/tW9mpglUpKgtUdMdOFdf4qVCILO4rgmrrw27UpqjIbBN6q7/usECSFKDq/ZGc/0Hk2d+5aq5Ak4UNxygYQwFxohNTRtcYlBific0HShQLn2l4sanLAAgzK+icSq2qoccWm8UTqnlP5TBDKVNFKLGtxNvo3/LrgMVvrSB00f7hLjsdTCtbgmknvLEVkYt4wfyA4j9oP00/KB/tjSUhm1xthAUpUrp6AC3sFT34bQ9GcF/9tbXsS+WJmi7SbIHzbWwzZxkzc0XFXe78OZMbaHJN7WmJmUlTx4LkYFTLCjeHRzuuWDjTN14vdog3puZiGY4yCAcY+PGHAjei+1MH6FZ5buoHnuSF78oIWvCNsUkPFzHR3tULWKkIkdr5yY861FlOPXSaJ1Uiw8mCnFpir+Mu84/0LpfZduJOUZsqorGbpRITvYHOdetqNOttXS7gnxgUWlUWTUiMB1IH+F2ztOTxNALPHi8Fii/fb5nvjiGR/u6g6VOfx/RC2pwMkatCu/6Y3H0mk9+5b4kxwbMWCK4PkoFE=
+  file: test.jar
+  on:
+    repo: modernmaster/katas
+    branch: 41-BintrayIntegration
