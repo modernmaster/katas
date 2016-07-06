@@ -19,8 +19,7 @@ script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-before_deploy:
-- mvn release\:prepare -B
+
 deploy:
   provider: releases
   api_key:
