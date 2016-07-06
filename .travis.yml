@@ -22,7 +22,6 @@ after_success:
 
 before_deploy:
 - mvn compile
-  on: 41-BintrayIntegration
 
 deploy:
   skip_cleanup: true
