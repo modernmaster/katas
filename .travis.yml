@@ -21,9 +21,9 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 
 before_deploy:
-  - mvn release:prepare -B 
+- mvn release\:prepare -B
   on: 41-BintrayIntegration
 
 deploy:
-  - mvn release:perform
+- mvn release\:perform
   on: 41-BintrayIntegration
