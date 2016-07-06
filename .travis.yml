@@ -19,4 +19,5 @@ script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- mvn release:prepare
+- mvn release:prepare -B
+- mvn release:perform
