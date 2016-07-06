@@ -13,16 +13,17 @@ addons:
       description: Build submitted via Travis CI
     notification_email: diesel_baz@hotmail.com
     build_command_prepend: mvn clean
-    build_command: mvn -DskipTests=true compile
+    build_command: mvn compile
     branch_pattern: master
 script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+before_deploy:
+  - mvn release:prepare -B 
+  on: 41-BintrayIntegration
+
 deploy:
-  provider: bintray
-  file: descriptor.json
-  user: modernmaster
-  key:
-    secure: BW9BmT1PRqco+PVSrkSQnj6osnJEZnDtYQ5nJg6nUbXpqH2aqxC5+XEPbO43yuBYpHIc/slLg8KWxAYTXqiTmmSmy1voujwruMjYEq+w+tnxNr3HPK7vEaJxq3Vh/mMGxuG2Zkv6Qa4w9Aogz0PkyKXwaOT/XuJp6q1eIMdvp7f+qoeUpCHfuNHrQlY9XCSgbqSfEwsDsT6BwWoKNOzDELhh9ZOeKeK911+DsFvyeImnEbc7/89nkkB92bJJN8lg8AcRMYtmDua4bqw4Y/LHe9VzQt+01AcgTKTlsonVaPBk3LTjGT5hFgohr275vhI0CrAbhUNMy+i92JPJQDfoy/mfft2b7amtyuG1KnbjL7Os+k7mP0+HcEqnbkWtmHXEUiWPpIWI1yT1cxD4uIKx0amK0bUzIrRiScyHY+MaIlnodcUSurWcvTIWUzSR9laewSdJJJ1Se1kyuuYQiyyE17g+0MZhf7xfkHxb8FAT7VZqegpFGnecDFadvrQK/cRD/33llSgvXaQHRMSIf4nZvFhwoN97ZlgCzC8Mvx2QGu7LRTKndbMEVoI986luA5Nemqhmq5nA3NqSmbcqDP6Yc/+MOVdbGVd1nC88Y+ZAUKYIsRuRv96qAh6Qcmf1lOJ/2c0xVu+dnfOkXqtgtSO25ovLWZUjyTtVQCiQPXVpo8s=
+  - mvn release:perform
   on: 41-BintrayIntegration
