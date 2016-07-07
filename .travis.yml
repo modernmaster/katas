@@ -3,7 +3,7 @@ env:
   global:
    - secure: Pu8U6sq3dpp+p4oUQ4qtaIP3bXD6NidnnogIZXlgbd9SFoh4b12xM4fML4EzdF6U7BZJk3lMg8nrZ7cNvOGcTzlRyj4sOL64At1ZVvKBOboNEcpL2fPjYSrV4BlnTUym8oTvSV3ZMgjXzMJl1lZTUpG07cmTzA+F6RqOxuop9mpDju/XbqR/qudGS3d7Up4MOjahbNj5edLy4mWNUXRlCwdlcJjWuXmKZub9MG0ChO5CtzoRH2h7ZlTCfzx9CAOaqaOpdpxF99BVEnFc+ckAs5jKuw2hfisKzXXLRHxJh95VoI5KOBf/2fMvYTS7mObPQgHJUs04mzh/M56i0CwIZqby98xE7oZSxkYNapZOC3m2GloJS/8WlEcrqD2KKRd2ZtdbxQxlGv2QDaqiOfPIQMvh77B8WwJVKQjE0bGgCw07g2UmLg6qs3No7655oelvqQfkr/jtIiUI0Bz1hoKfBgg/w4GopjQS1x1txN41mVYjN7VczivDUU3ac8k9OHMfOp+tGHPjWIHj0OT5qPQdM8ZDJ/sTVqTMCMBFpsWs56uqT64P5yUeEi7TR0ahAxnPx3ewiWMIYOzvKGxbsO2vAV+9j1p2NDIBoSK7d+4j7pCVVg+yG3tSy3+XaXg7niMMEnL6vx7TAIsFtuqev2aGQbB3xJXF0OYv7/nxfeKEq/c=
    - secure: QSV+SIZCmV/7V7EHHgISz6mUAai8oXeEsvfJBpDXq+Et8WODjhEVWVpp1Ovv2kDRDOq/bxWSFvC3sEVBbNDgeF3UZn0zpKrx7vT6EHwoUCo9jOxIoKyXhe5j9jQUVHxtzHhPzlz31CUFWouW4u/N0A8JAJH9wi5ySKCbdXYTIE1sDtdtfsD0xVY9EHnYxsglDO4LRB9F/Ld94qcCtw8v0i2sJ+zjKs5mgY9QuTSmIl+pKCvEH6EgiswuAxFbEE19aoLrFB1KlWWoJmqjYPOJtNCi1Em4ZCoFWHfdCiTMbOxSeyTDUNP+fCpt99B1TJe51s8igolcUUwJNg43HhOuSiizoJtO8sCCusGF7m8ce2JWRgfQc9chLmfz2SUvJ9zR/acde5lL+xDWvpdD/v/YpPnj7AT4k4Fx6lVS1XYP5uIAzvh+mXe37zIBYILnSD2V2RMn4rGk+hzh31I2YUEn/JMKdOwUADRPtTCLwnREAfbuuwSs4MbA/OvZsSqPiM2HZi2oadKr/bUgpyDF1rHgseQhaQ+qAK5yBe7PqD0ijAxt1s8RJ7Ds9TubWdeODazPCpL0HRnQBaM/wqKPwAxv9WKreKP/q2KsEdelETRAZfsPatTp2IYLBOwRSmufAuk821clPFCwRYH0aX+HJwVXgZGvoTGhnVYmvzYKfUe0/xM=
-
+   - secure: QTxawJwilZeArlBTDbctDlDZRBXYvl5vhUGzvv3Cd/jbSb5Gqc4GjmLzSy86f1Yk6p6qGSM9MPwx9EdmRZxyNn78XfeljmW78lja7v2TvRnvbDrJU9h3ckcqpswuyAm/e64jAm4cLYuGk58trel5qhNMBciU0EKIq9700zV722E7a6m2bFKQeZ3xS+yvRiPe9ClMuLZVBsBVyI4ic3Ui7psxpESId6DZH40fmnPW1qGDtl3LKp3nV8tBtsesFWeFWs92H8gPrqrH4XUnJMh+27RJdHFjowS4xYkbpEvt4+utZjeGgNyWvqFDF6vKkMIVMehG8MwCM2FyVM+5xwyddmjXB5GSCoXx30LHYnn+v4hpjddThhSwYiyhTFTIIvN0UVsNlW4a9aPXVER8b7jUZNGAVi+pC4cORPAVtKELtSHJnM7EzEZprYAXbqwm7lcttx1TZnOX+BRzlynmo/7BTF8hLJh9VQod9RA7sTehsONPY4QjX5gGPQ+06IF0CcqiLUU+ioZXfc1uv+a1th6AstEkmpYrPKa3x0rR2LxEb5odQDDbfj3kpO5bSRHITF7OgXIUNbS1Bs0zRJuWQ1ppcDPeNmUj2kaHlcA1Gd4yo3fG4yrWe9qEsX5dH7EOi/5mhUkJMrzDyUpw8aH69nH12Fgx0b4723zOobn52uSCXbY=
 addons:
   sauce_connect:
     username: modernmaster
@@ -17,9 +17,17 @@ addons:
     build_command_prepend: mvn clean
     build_command: mvn -DskipTests=true compile
     branch_pattern: master
-
+before_script:
+- git config --global user.email "me@jamesmcguigan.co.uk"
+- git config --global user.name "Travis-CI"
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH}:@github.com" > .git/credentials
 script:
 - mvn verify
-
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+- bash <(if [ "$TRAVIS_BRANCH" == "develop" ]; then if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git rebase master; mvn release:prepare -B;	mvn release:perform; fi fi)
+
+
+
+
