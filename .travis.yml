@@ -26,8 +26,8 @@ script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- bash <(mvn release:prepare -B; mvn release:perform)
-#- bash <(if [ "$TRAVIS_BRANCH" == "develop" ]; then if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git rebase origin/master; mvn release:prepare -B; mvn release:perform; fi fi)
+- mvn release:prepare -B
+- mvn release:perform
 
 
 
