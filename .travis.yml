@@ -19,9 +19,9 @@ addons:
     branch_pattern: master
 before_script:
 - git config --global user.email "me@jamesmcguigan.co.uk"
-- git config --global user.name "Travis-CI"
+- git config --global user.name "modernmaster"
 - git remote rm origin
-- git remote add origin https://modernmaster:${GH}@github.com/modernmaster/katas.git						
+- git remote add origin https://modernmaster:${GH}@github.com/modernmaster/katas.git
 script:
 - mvn verify
 after_success:
