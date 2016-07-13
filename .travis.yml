@@ -24,8 +24,8 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 - git config --global user.email "me@jamesmcguigan.co.uk"
 - git config --global user.name "modernmaster"
-- git config credential.helper "store --file=~/.git/credentials"
-- echo "https://${GH}:@github.com/modernmaster/katas.git" > ~/.git/credentials
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH}:@github.com/modernmaster/katas.git" > .git/credentials
 
 - mvn release:prepare -B
 - mvn release:perform
