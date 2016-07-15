@@ -22,7 +22,7 @@ before_script:
 - git config --global user.email "me@jamesmcguigan.co.uk"
 - git config --global user.name "modernmaster"
 - git remote rm origin
-- git remote add origin https://user:${GH}@github.com/modernmaster/katas.git
+- git remote add origin https://modernmaster:${GH}@github.com/modernmaster/katas.git
 - git checkout 41-BintrayIntegration
 script:
 - mvn verify
