@@ -8,9 +8,9 @@
     <name>katas</name>
     <url>http://maven.apache.org</url>
     <scm>
-        <developerConnection>scm:git:git@github.com:modernmaster/katas.git</developerConnection>
-        <connection>scm:git:git@github.com:modernmaster/katas.git</connection>
-        <url>git@github.com:modernmaster/katas.git</url>
+        <developerConnection>scm:git:https://github.com/modernmaster/katas.git</developerConnection>
+        <connection>scm:git:https://github.com/modernmaster/katas.git</connection>
+        <url>https://github.com/modernmaster/katas</url>
         <tag>HEAD</tag>
     </scm>
     <properties>
