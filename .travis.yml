@@ -18,17 +18,16 @@ addons:
     build_command_prepend: mvn clean
     build_command: mvn -DskipTests=true compile
     branch_pattern: master
+before_script:
+- git config --global user.email "me@jamesmcguigan.co.uk"
+- git config --global user.name "modernmaster"
+- git remote rm origin
+- git remote add origin https://user:${GH}@github.com/modernmaster/katas.git
+- git checkout 41-BintrayIntegration
 script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- git config --global user.email "me@jamesmcguigan.co.uk"
-- git config --global user.name "modernmaster"
 - git checkout 41-BintrayIntegration
-- chmod 600 deploy-key
-- mv deploy_key ~/.ssh/id_rsa
-- eval `ssh-agent -s`
-- ssh-add deploy_key
 - mvn release:prepare -B
 - mvn release:perform
-
