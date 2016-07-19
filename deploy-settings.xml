@@ -7,7 +7,7 @@
 	<server>
 	  <id>bintray</id>
 	  <username>modernmaster</username>
-	  <password>5e9f815b8642cf6fd4bfe562472c7c82c8b16870</password>
+	  <password>${Bintray_Key}</password>
 	</server>  
   </servers>	
 </settings>
