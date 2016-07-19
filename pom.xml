@@ -4,14 +4,14 @@
     <groupId>uk.co.mcguigan</groupId>
     <artifactId>katas</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.13-SNAPSHOT</version>
+    <version>0.0.13</version>
     <name>katas</name>
     <url>http://maven.apache.org</url>
     <scm>
         <developerConnection>scm:git:https://github.com/modernmaster/katas.git</developerConnection>
         <connection>scm:git:https://github.com/modernmaster/katas.git</connection>
         <url>https://github.com/modernmaster/katas</url>
-        <tag>HEAD</tag>
+        <tag>katas-0.0.13</tag>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
