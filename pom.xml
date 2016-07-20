@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>uk.co.mcguigan</groupId>
     <artifactId>katas</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.15-SNAPSHOT</version>
     <name>katas</name>
     <url>http://maven.apache.org</url>
     <scm>
-        <developerConnection>scm:git:git@github.com:modernmaster/katas.git</developerConnection>
-        <connection>scm:git:git@github.com:modernmaster/katas.git</connection>
-        <url>git@github.com:modernmaster/katas.git</url>
+        <developerConnection>scm:git:https://github.com/modernmaster/katas.git</developerConnection>
+        <connection>scm:git:https://github.com/modernmaster/katas.git</connection>
+        <url>https://github.com/modernmaster/katas</url>
         <tag>HEAD</tag>
     </scm>
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <multiproject.basedir>${project.basedir}</multiproject.basedir>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <url>https://api.bintray.com/maven/modernmaster/maven/katas/;publish=1</url>
+        </repository>
+    </distributionManagement>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.4</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -174,7 +213,7 @@
  				<groupId>com.srcclr</groupId>
  				<artifactId>srcclr-maven-plugin</artifactId>
  				<version>2.0.4</version>
- 				<configuration/>
+ 				<configuration />
  				<executions>
  					<execution>
  						<phase>verify</phase>
@@ -186,6 +225,25 @@
  			</plugin>			
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <!--<finalName>${project.artifactId}_${project.version}</finalName>-->
+                    <finalName>${project.artifactId}</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.17</version>
                 <executions>
@@ -194,6 +252,7 @@
                         <phase>validate</phase>
                         <configuration>
                             <configLocation>${multiproject.basedir}/config/checkstyles.xml</configLocation>
+                            <suppressionsLocation>${multiproject.basedir}/config/suppressions.xml</suppressionsLocation>
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
@@ -268,7 +327,7 @@
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
                 <configuration>
-                    <check/>
+                    <check />
                     <formats>
                         <format>html</format>
                         <format>xml</format>
