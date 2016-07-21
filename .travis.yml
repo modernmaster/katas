@@ -28,4 +28,4 @@ script:
 - mvn verify
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- 'if [[ "$TRAVIS_PULL_REQUEST" = "true" && "$TRAVIS_BRANCH" = "master" ]]; then bash ./deploy.sh; fi'
+- 'if [[ "$TRAVIS_PULL_REQUEST" != "false" && "$TRAVIS_BRANCH" = "master" ]]; then bash ./deploy.sh; fi'
