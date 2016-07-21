@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.rockpaperscissors.AcceptanceTests;
+package uk.co.jamesmcguigan.rockpaperscissors.acceptancetests;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

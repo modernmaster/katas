@@ -67,7 +67,7 @@ Index = {
 	},
 	
 	formToJSON:function() {
-		return 	'{"result":null,"winner":null,"player1":{"isHuman":'+Index.getIsHuman()+',"gesture":{"name":"'+Index.getSelectedGesture()+'"}},"player2":{"isHuman": false,"gesture": null}}';;
+		return 	'{"result":null,"winner":null,"player1":{"isHuman":'+Index.getIsHuman()+',"gesture":{"name":"'+Index.getSelectedGesture()+'"}},"player2":{"isHuman": false,"gesture": null}}';
 	},
 
 	getIsHuman:function()
