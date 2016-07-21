@@ -60,19 +60,19 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     }
 
     @Given("^a new game of rock, paper, scissors$")
-    public void a_new_game_of_rock_paper_scissors() {
+    public void aNewGameOfRockPaperScissors() {
         webDriver.get(HTTP_LOCALHOST);
     }
 
     @Given("^I am Player (\\d+)$")
-    public void I_am_Player(int arg1) {
+    public void iAmPlayer(int arg1) {
         webDriver.findElement(By.id(PLAYER1_HUMAN)).click();
         Assert.assertTrue(webDriver.findElement(By.id(PLAYER_1_GESTURE))
                 .isDisplayed());
     }
 
     @Given("^Player (\\d+) is the Computer$")
-    public void Player_is_the_Computer(int arg1) {
+    public void playerIsTheComputer(int arg1) {
         if (arg1 == 1) {
             webDriver.findElement(By.id(PLAYER1_COMPUTER)).click();
             Assert.assertFalse(webDriver.findElement(By.id(PLAYER1_GESTURE))
@@ -81,8 +81,8 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     }
 
     @Given("^a previous game ended with a successful outcome$")
-    public void a_previous_game_ended_with_a_successful_outcome() {
-        I_play_a_game();
+    public void aPreviousGameEndedWithASuccessfulOutcome() {
+        iPlayAGame();
         Assert.assertTrue(webDriver.findElement(By.id(WINNING_CONDITION))
                 .isDisplayed());
         Assert.assertTrue(webDriver.findElement(By.id(WINNING_PLAYER))
@@ -90,13 +90,13 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     }
 
     @When("^I play a different game$")
-    public void I_play_a_different_game() {
-        Player_is_the_Computer(1);
-        I_play_a_game();
+    public void iPlayADifferentGame() {
+        playerIsTheComputer(1);
+        iPlayAGame();
     }
 
     @When("^I play a game$")
-    public void I_play_a_game() {
+    public void iPlayAGame() {
         webDriver.findElement(By.id(PLAY_GAME)).click();
         WebDriverWait wait = new WebDriverWait(webDriver, 50);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By
@@ -104,7 +104,7 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     }
 
     @Then("^an outcome from the game will be reached.$")
-    public void an_outcome_from_the_game_will_be_reached() {
+    public void anOutcomeFromTheGameWillBeReached() {
         Assert.assertTrue(webDriver.findElement(By.id(WINNING_PLAYER))
                 .isDisplayed());
         Assert.assertTrue(webDriver.findElement(By.id(WINNING_CONDITION))
@@ -114,14 +114,14 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     }
 
     @Then("^a different outcome from the game will be reached.$")
-    public void a_different_outcome_from_the_game_will_be_reached() {
+    public void aDifferentOutcomeFromTheGameWillBeReached() {
 
         String game1 = webDriver.findElement(By.id(WINNING_CONDITION))
                 .getText();
-        I_play_a_game();
+        iPlayAGame();
         String game2 = webDriver.findElement(By.id(WINNING_CONDITION))
                 .getText();
-        I_play_a_game();
+        iPlayAGame();
         String game3 = webDriver.findElement(By.id(WINNING_CONDITION))
                 .getText();
         Assert.assertFalse(game1.equals(game2) && game2.equals(game3));
