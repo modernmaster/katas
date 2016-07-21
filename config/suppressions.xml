@@ -12,6 +12,5 @@
     <suppress checks=".*" files="png$" />
     <suppress checks=".*" files="xml$" />
     <suppress checks=".*" files="xml\\.gz$" />
-    <suppress checks="MagicNumber" files=".*\\*Test.java" />
 </suppressions>
         
