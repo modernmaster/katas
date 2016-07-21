@@ -14,7 +14,7 @@ public class RailwayNetworkTests {
     private Graph railwayNetwork;
 
     @Before
-    public void Setup() {
+    public void setUp() {
         railwayNetwork = constructRailwayNetwork();
     }
 

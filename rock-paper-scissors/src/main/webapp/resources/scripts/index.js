@@ -12,7 +12,7 @@ Index = {
 	},	
 	
 	addPlayer1StatusHandler:function() {
-		if ($(this).val() == "human") {
+		if ($(this).val() === "human") {
 			$(Index.Ids.Player1Gesture).show();
 		} else {
 			$(Index.Ids.Player1Gesture).hide();			
@@ -72,7 +72,7 @@ Index = {
 
 	getIsHuman:function()
 	{
-		return $(Index.Ids.Player1Status).val() == "human";
+		return $(Index.Ids.Player1Status).val() === "human";
 	},
 
 	getSelectedGesture:function() 

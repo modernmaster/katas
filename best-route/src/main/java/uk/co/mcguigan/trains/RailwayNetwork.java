@@ -26,7 +26,8 @@ public class RailwayNetwork implements Graph {
 
     public Integer calculateNumberOfRoutesWithExactNumberOfStops(final Vertex startingStation,
                                                                  final Vertex terminatingStation,
-                                                                 final Integer exactNumberOfStops, Integer currentNumberOfMatches) {
+                                                                 final Integer exactNumberOfStops, final Integer numberOfMatches) {
+        int currentNumberOfMatches = numberOfMatches;
         if (exactNumberOfStops >= 0) {
             Edge[] routes = startingStation.getEmanatingEdges();
             for (Edge route : routes) {
@@ -37,7 +38,7 @@ public class RailwayNetwork implements Graph {
             currentNumberOfMatches += 1;
             return currentNumberOfMatches;
         }
-        return currentNumberOfMatches;
+        return numberOfMatches;
     }
 
     public Integer calculateNumberOfRoutesUnderASetDistance(final Vertex startingStation, final Vertex terminatingStation,
@@ -96,17 +97,18 @@ public class RailwayNetwork implements Graph {
     }
 
     private static Integer depthFirstTraversal(final Vertex startingStation, final Vertex terminatingStation,
-                                               final Integer distanceRemaining, Integer matches) {
+                                               final Integer distanceRemaining, final Integer matches) {
+        Integer currentMatches = matches;
         Edge[] routes = startingStation.getEmanatingEdges();
         for (Edge route : routes) {
             if (route.getWeight() < distanceRemaining) {
                 if (route.getTargetVertex().equals(terminatingStation)) {
-                    matches += 1;
+                    currentMatches += 1;
                 }
-                matches = depthFirstTraversal(route.getTargetVertex(), terminatingStation, distanceRemaining - route.getWeight(), matches);
+                currentMatches = depthFirstTraversal(route.getTargetVertex(), terminatingStation, distanceRemaining - route.getWeight(), matches);
             }
         }
-        return matches;
+        return currentMatches;
     }
 
     public static class RailwayNetworkBuilder {
