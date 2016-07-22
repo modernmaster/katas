@@ -9,9 +9,6 @@ import uk.co.jamesmcguigan.rockpaperscissors.builders.PlayerBuilder;
 import uk.co.jamesmcguigan.rockpaperscissors.models.Game;
 
 public class GameServiceTest {
-    @Before
-    public void setUp() throws Exception {
-    }
 
     @Test
     public void testCalculateASuccessfulResultOfGame() {

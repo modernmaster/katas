@@ -21,10 +21,10 @@ Index = {
 	
 	populateGestures : function() {
 		$.ajax({
-			type : 'GET',
-			contentType : 'application/json',
-			dataType: 'json',
-			url : 'gesture/',
+			type : "GET",
+			contentType : "application/json",
+			dataType: "json",
+			url : "gesture/",
 			success : Index.renderGestures,
 			error : Index.failedAtPlayingGame
 		});
@@ -32,10 +32,10 @@ Index = {
 	
 	postGame : function() {
 		$.ajax({
-			type : 'POST',
-			contentType : 'application/json',
-			url : 'game/',
-			dataType: 'json',
+			type : "POST",
+			contentType : "application/json",
+			url : "game/",
+			dataType: "json",
 			data : Index.formToJSON(),
 			success : Index.successAtPlayingGame,
 			error : Index.failedAtPlayingGame
@@ -54,7 +54,7 @@ Index = {
 	failedAtPlayingGame:function(jqXHR, textStatus, errorThrown)  {
 		$(Index.Ids.WinningPlayer).hide();
 		$(Index.Ids.WinningCondition).hide();
-		$(Index.Ids.ErrorMessage).text('Opps, there has been a problem ' + errorThrown);
+		$(Index.Ids.ErrorMessage).text("Opps, there has been a problem " + errorThrown);
 	},
 	
 	renderGestures:function(data)  {
@@ -62,12 +62,13 @@ Index = {
 		var $subType = $(Index.Ids.Player1Gesture);
 		$subType.empty();
 		$.each(list, function() {
-			$subType.append($('<option></option>').val(this.name).text(this.name));
+			$subType.append($("<option></option>").val(this.name).text(this.name));
 		});
 	},
 	
 	formToJSON:function() {
-		return 	'{"result":null,"winner":null,"player1":{"isHuman":'+Index.getIsHuman()+',"gesture":{"name":"'+Index.getSelectedGesture()+'"}},"player2":{"isHuman": false,"gesture": null}}';
+		return 	"{\"result\":null,\"winner\":null,\"player1\":{\"isHuman\":"+Index.getIsHuman()+","
+		+ "\"gesture\":{\"name\":\""+Index.getSelectedGesture()+"\"}},\"player2\":{\"isHuman\": false,\"gesture\": null}}";
 	},
 
 	getIsHuman:function()
@@ -86,14 +87,14 @@ Index = {
 };
 
 Index.Ids = {
-	PlayGame: '#play-game',
-	Player1: 'input:radio[name=player1]',
-	Player1Status: 'input:radio[name=player1]:checked',
-	Player1Gesture: '#player1Gesture',
-	Outcome: '#outcome',
-	WinningCondition: '#winning-condition',
-	ErrorMessage: '#error-message',
-	WinningPlayer: '#winning-player'
+	PlayGame: "#play-game",
+	Player1: "input:radio[name=player1]",
+	Player1Status: "input:radio[name=player1]:checked",
+	Player1Gesture: "#player1Gesture",
+	Outcome: "#outcome",
+	WinningCondition: "#winning-condition",
+	ErrorMessage: "#error-message",
+	WinningPlayer: "#winning-player"
 };
 
 
