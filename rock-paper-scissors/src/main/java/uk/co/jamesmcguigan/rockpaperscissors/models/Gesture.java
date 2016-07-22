@@ -1,6 +1,6 @@
 package uk.co.jamesmcguigan.rockpaperscissors.models;
 
-public class Gesture {
+public final class Gesture {
     private String name;
 
     public Gesture() {

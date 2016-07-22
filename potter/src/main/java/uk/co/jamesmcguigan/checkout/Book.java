@@ -18,6 +18,5 @@ public class Book {
         return name;
     }
 
-    public enum Books {Book1, Book2, Book3, Book4, Book5}
-
+    public enum Books { Book1, Book2, Book3, Book4, Book5 }
 }
