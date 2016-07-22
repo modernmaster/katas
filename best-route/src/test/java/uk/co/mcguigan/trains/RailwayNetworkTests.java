@@ -19,7 +19,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheDistanceOfRouteABC() {
+    public void shouldCalculateTheDistanceOfRouteABC() {
         //Given
         List<Vertex> railwayJourney = new LinkedList<Vertex>();
         railwayJourney.add(railwayNetwork.getVertex("A"));
@@ -33,7 +33,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheDistanceOfRouteAD() {
+    public void shouldCalculateTheDistanceOfRouteAD() {
         //Given
         List<Vertex> railwayJourney = new LinkedList<Vertex>();
         railwayJourney.add(railwayNetwork.getVertex("A"));
@@ -46,7 +46,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheDistanceOfRouteADC() {
+    public void shouldCalculateTheDistanceOfRouteADC() {
         //Given
         List<Vertex> railwayJourney = new LinkedList<Vertex>();
         railwayJourney.add(railwayNetwork.getVertex("A"));
@@ -60,7 +60,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheDistanceOfRouteAEBCD() {
+    public void shouldCalculateTheDistanceOfRouteAEBCD() {
         //Given
         List<Vertex> railwayJourney = new LinkedList<Vertex>();
         railwayJourney.add(railwayNetwork.getVertex("A"));
@@ -76,7 +76,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheDistanceOfRouteAED() {
+    public void shouldCalculateTheDistanceOfRouteAED() {
         //Given
         List<Vertex> railwayJourney = new LinkedList<Vertex>();
         railwayJourney.add(railwayNetwork.getVertex("A"));
@@ -90,7 +90,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheNumberOfTripsStartingAndFinishingAtCWithMaxThreeStops() {
+    public void shouldCalculateTheNumberOfTripsStartingAndFinishingAtCWithMaxThreeStops() {
         //Given
         Vertex start = railwayNetwork.getVertex("C");
         Vertex finish = railwayNetwork.getVertex("C");
@@ -104,7 +104,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheNumberOfTripsStartingAtAAndFinishingAtCWithExactlyFourStops() {
+    public void shouldCalculateTheNumberOfTripsStartingAtAAndFinishingAtCWithExactlyFourStops() {
         //Given
         Vertex start = railwayNetwork.getVertex("A");
         Vertex finish = railwayNetwork.getVertex("C");
@@ -118,7 +118,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheShortestRouteFromAtoCInTermsOfDistanceToTravel() {
+    public void shouldCalculateTheShortestRouteFromAtoCInTermsOfDistanceToTravel() {
         //Given
         Vertex startStation = railwayNetwork.getVertex("A");
         Vertex endStation = railwayNetwork.getVertex("C");
@@ -130,7 +130,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheShortestRouteFromBtoBInTermsOfDistanceToTravel() {
+    public void shouldCalculateTheShortestRouteFromBtoBInTermsOfDistanceToTravel() {
         //Given
         final Vertex startStation = railwayNetwork.getVertex("B");
         final Vertex endStation = railwayNetwork.getVertex("B");
@@ -142,7 +142,7 @@ public class RailwayNetworkTests {
     }
 
     @Test
-    public void ShouldCalculateTheNumberOfDifferentRoutesFromCToCWithADistanceOfLessThan30() {
+    public void shouldCalculateTheNumberOfDifferentRoutesFromCToCWithADistanceOfLessThan30() {
         //Given
         final Vertex start = railwayNetwork.getVertex("C");
         final Vertex finish = railwayNetwork.getVertex("C");
