@@ -1,6 +1,6 @@
 package uk.co.jamesmcguigan.rockpaperscissors.models;
 
-public class Player {
+public final class Player {
     private boolean isHuman;
     private Gesture gesture;
 

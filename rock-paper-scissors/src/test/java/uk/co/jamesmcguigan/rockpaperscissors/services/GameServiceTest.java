@@ -1,7 +1,6 @@
 package uk.co.jamesmcguigan.rockpaperscissors.services;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import uk.co.jamesmcguigan.rockpaperscissors.builders.GameBuilder;
 import uk.co.jamesmcguigan.rockpaperscissors.builders.GestureBuilder;

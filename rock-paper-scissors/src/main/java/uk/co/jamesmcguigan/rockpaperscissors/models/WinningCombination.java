@@ -30,16 +30,6 @@ public class WinningCombination {
     }
 
     @Override
-    public boolean equals(final Object obj) {
-        if (obj == null || obj.getClass() != Gesture.class) {
-            return false;
-        }
-        Gesture winningCombinationGesture = (Gesture) obj;
-        return winningGesture.getName().equals(
-                winningCombinationGesture.getName());
-    }
-
-    @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(winningGesture.getName());
