@@ -31,7 +31,7 @@ public class WinningCombination {
 
     @Override
     public boolean equals(final Object obj) {
-        if(obj == null || obj.getClass() != Gesture.class) {
+        if (obj == null || obj.getClass() != Gesture.class) {
             return false;
         }
         Gesture winningCombinationGesture = (Gesture) obj;
