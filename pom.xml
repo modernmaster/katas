@@ -4,7 +4,7 @@
     <groupId>uk.co.mcguigan</groupId>
     <artifactId>katas</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.17-SNAPSHOT</version>
+    <version>0.0.34-SNAPSHOT</version>
     <name>katas</name>
     <url>http://maven.apache.org</url>
     <scm>
