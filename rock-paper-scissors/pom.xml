@@ -4,10 +4,10 @@
     <parent>
         <groupId>uk.co.mcguigan</groupId>
         <artifactId>katas</artifactId>
-        <version>0.0.33-SNAPSHOT</version>
+        <version>0.0.33</version>
     </parent>
     <packaging>war</packaging>
-    <version>0.0.33-SNAPSHOT</version>
+    <version>0.0.33</version>
     <name>rock-paper-scissors</name>
     <properties>
 		<multiproject.basedir>${basedir}/..</multiproject.basedir>	
