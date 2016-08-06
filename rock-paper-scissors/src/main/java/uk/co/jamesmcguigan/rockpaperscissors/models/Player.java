@@ -1,6 +1,6 @@
 package uk.co.jamesmcguigan.rockpaperscissors.models;
 
-public class Player {
+public final class Player {
     private boolean isHuman;
     private Gesture gesture;
 
@@ -22,7 +22,7 @@ public class Player {
 
     @Override
     public boolean equals(final Object obj) {
-        if(obj==null || obj.getClass() != Player.class) {
+        if (obj == null || obj.getClass() != Player.class) {
             return false;
         }
         Player player = (Player) obj;

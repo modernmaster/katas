@@ -1,6 +1,5 @@
 package uk.co.jamesmcguigan.checkout;
 
-import org.hamcrest.core.Is;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,7 +12,7 @@ public class CheckoutTest {
     private static final double bookPrice = 8;
 
     @Before
-    public void setup() {
+    public void setUp() {
         checkout = new Checkout();
     }
 

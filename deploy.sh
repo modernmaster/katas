@@ -1,5 +1,4 @@
 #!/bin/bash
-
-git checkout master
-mvn release:prepare -B
-mvn release:perform --settings deploy-settings.xml
+#git checkout develop
+#mvn release:prepare -B -Dskiptests
+#mvn release:perform --settings deploy-settings.xml

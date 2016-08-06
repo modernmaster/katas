@@ -1,6 +1,6 @@
 package uk.co.jamesmcguigan.rockpaperscissors.models;
 
-public class Gesture {
+public final class Gesture {
     private String name;
 
     public Gesture() {
@@ -21,7 +21,7 @@ public class Gesture {
 
     @Override
     public boolean equals(final Object obj) {
-        if(obj == null || obj.getClass() != Gesture.class) {
+        if (obj == null || obj.getClass() != Gesture.class) {
             return false;
         }
         if (Gesture.class.equals(obj.getClass())) {
