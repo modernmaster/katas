@@ -17,7 +17,7 @@ addons:
     notification_email: diesel_baz@hotmail.com
     build_command_prepend: mvn clean
     build_command: mvn -DskipTests=true compile
-    branch_pattern: master1
+    branch_pattern: master
 before_script:
 - git config --global user.email "me@jamesmcguigan.co.uk"
 - git config --global user.name "modernmaster"
