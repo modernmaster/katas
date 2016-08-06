@@ -25,11 +25,8 @@ before_script:
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git remote set-url origin https://modernmaster:${GH_TOKEN}@github.com/modernmaster/katas.git
 script:
-- mvn verify
+- VAR=$(git log --pretty=%s | head -1 | grep -G "^[maven-release-plugin] prepare for next development iteration$")
+- 'if [ -z "$VAR" ]; then mvn verify fi'
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- echo "$TRAVIS_TAG"
-- echo "$TRAVIS_COMMIT"
-- echo "$TRAVIS_PULL_REQUEST"
-- echo "$TRAVIS_BRANCH"
 - 'if [[ "$TRAVIS_PULL_REQUEST" != "false" && "$TRAVIS_BRANCH" = "master" ]]; then bash ./deploy.sh; fi'
