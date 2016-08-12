@@ -1,0 +1,177 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>web-ui</artifactId>
+    <packaging>play2</packaging>
+    <parent>
+        <groupId>uk.co.mcguigan</groupId>
+        <artifactId>katas</artifactId>
+        <version>0.0.34-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <multiproject.basedir>${basedir}/..</multiproject.basedir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+        </dependency>
+
+        <!-- only if using Java -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-java_2.11</artifactId>
+        </dependency>
+
+        <!-- required for: "run", "start" and "dist" -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-netty-server_2.11</artifactId>
+        </dependency>
+
+        <!-- only if enhancement is required -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-enhancer</artifactId>
+        </dependency>
+
+        <!-- only if there are JUnit tests in the project -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-test_2.11</artifactId>
+        </dependency>
+
+        <!-- only if there are Specs2 tests in the project -->
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-specs2_2.11</artifactId>
+        </dependency>
+
+        <!--- new additions -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.tototoshi</groupId>
+            <artifactId>play-flyway_2.11</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.skinny-framework</groupId>
+            <artifactId>skinny-orm_2.11</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-play_2.11</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angularjs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-ui-bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-ui-router</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>marked</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular-marked</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angularjs-toaster</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.detro.ghostdriver</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.webjars.npm</groupId>-->
+            <!--<artifactId>phantomjs-prebuilt</artifactId>-->
+            <!--<version>2.1.11</version>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${project.basedir}/app</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/test</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/conf</directory>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/public</directory>
+                <targetPath>public</targetPath>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>com.google.code.play2-maven-plugin</groupId>
+                <artifactId>play2-maven-plugin</artifactId>
+                <version>1.0.0-beta4</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- only if using database evolutions -->
+                    <serverJvmArgs>-Dplay.evolutions.db.default.autoApply=true</serverJvmArgs>
+                </configuration>
+                <executions>
+                    <!-- only if there are assets in the project -->
+                    <execution>
+                        <id>default-play2-compile-assets</id>
+                        <goals>
+                            <goal>closure-compile</goal> <!-- only if precompiling js assets -->
+                            <goal>coffee-compile</goal> <!-- only if precompiling coffee assets -->
+                            <goal>less-compile</goal> <!-- only if precompiling less assets -->
+                        </goals>
+                    </execution>
+                    <!-- only if enhancement is required -->
+                    <execution>
+                        <id>default-play2-enhance</id>
+                        <goals>
+                            <goal>enhance</goal>
+                            <goal>ebean-enhance</goal> <!-- only if using Ebean -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <artifactId>sbt-compiler-maven-plugin</artifactId>
+                <version>1.0.0-beta7</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

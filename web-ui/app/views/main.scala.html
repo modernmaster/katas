@@ -1,0 +1,36 @@
+@(webJarAssets: WebJarAssets, title: String)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>@title</title>
+  <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(webJarAssets.locate("bootstrap.min.css"))'>
+  <link rel="stylesheet" media="screen" href='@routes.WebJarAssets.at(webJarAssets.locate("toaster.css"))'>
+  <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/main.css")'>
+  <link rel="shortcut icon" type="image/png" href='@routes.Assets.at("images/favicon.png")'>
+</head>
+<body id="body" ng-app="app">
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-static-top" >
+  <div class="container">
+    <!-- Brand -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">play-scala-angularjs-gulp</a>
+    </div>
+  </div>
+</nav>
+<!-- toaster -->
+<toaster-container toaster-options="{'close-button': true}"></toaster-container>
+<!-- Main content -->
+<div ui-view></div>
+<!-- scripts -->
+<script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("angular.min.js"))'></script>
+<script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("angular-animate.min.js"))'></script>
+<script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("angular-ui-router.min.js"))'></script>
+<script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("marked.js"))'></script>
+<script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("angular-marked.min.js"))'></script>
+<script type='text/javascript' src='@routes.WebJarAssets.at(webJarAssets.locate("toaster.js"))'></script>
+
+<script type='text/javascript' src='@routes.Assets.at("javascripts/app.js")'></script>
+<script type='text/javascript' src='@routes.Assets.at("javascripts/app.tpl.js")'></script>
+</body>
+</html>
