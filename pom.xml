@@ -15,7 +15,13 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <multiproject.basedir>${project.basedir}</multiproject.basedir>
+        <anorm.version>3.0.0-M1</anorm.version>
+        <play2.version>2.5.4</play2.version>
+        <play2-ebean.version>3.0.0-M1</play2-ebean.version>
+        <play2-enhancer.version>1.1.0</play2-enhancer.version>
+        <scala.version>2.11.7</scala.version>
     </properties>
     <distributionManagement>
         <repository>
@@ -185,6 +191,134 @@
                 <version>2.1.21</version>
                 <scope>test</scope>
             </dependency>
+
+            <!--- new additions -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <!-- only if using Java -->
+            <dependency>
+                <groupId>com.typesafe.play</groupId>
+                <artifactId>play-java_2.11</artifactId>
+                <version>${play2.version}</version>
+            </dependency>
+
+            <!-- required for: "run", "start" and "dist" -->
+            <dependency>
+                <groupId>com.typesafe.play</groupId>
+                <artifactId>play-netty-server_2.11</artifactId>
+                <version>${play2.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <!-- only if enhancement is required -->
+            <dependency>
+                <groupId>com.typesafe.play</groupId>
+                <artifactId>play-enhancer</artifactId>
+                <version>${play2-enhancer.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <!-- only if there are JUnit tests in the project -->
+            <dependency>
+                <groupId>com.typesafe.play</groupId>
+                <artifactId>play-test_2.11</artifactId>
+                <version>${play2.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- only if there are Specs2 tests in the project -->
+            <dependency>
+                <groupId>com.typesafe.play</groupId>
+                <artifactId>play-specs2_2.11</artifactId>
+                <version>${play2.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--- new additions -->
+            <dependency>
+                <groupId>com.typesafe</groupId>
+                <artifactId>config</artifactId>
+                <version>1.3.0</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.github.tototoshi</groupId>
+                <artifactId>play-flyway_2.11</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.skinny-framework</groupId>
+                <artifactId>skinny-orm_2.11</artifactId>
+                <version>2.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.192</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>webjars-play_2.11</artifactId>
+                <version>2.5.0-2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angularjs</artifactId>
+                <version>2.0.0-alpha.22</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>bootstrap</artifactId>
+                <version>3.3.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>angular-ui-bootstrap</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>angular-ui-router</artifactId>
+                <version>1.0.0-beta.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>marked</artifactId>
+                <version>0.3.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>angular-marked</artifactId>
+                <version>1.2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars.bower</groupId>
+                <artifactId>angularjs-toaster</artifactId>
+                <version>1.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.5.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.detro.ghostdriver</groupId>
+                <artifactId>phantomjsdriver</artifactId>
+                <version>1.0.4</version>
+                <scope>test</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>
@@ -346,5 +480,6 @@
         <module>rock-paper-scissors</module>
         <module>best-route</module>
         <module>fizz-buzz</module>
+        <module>web-ui</module>
     </modules>
 </project>
