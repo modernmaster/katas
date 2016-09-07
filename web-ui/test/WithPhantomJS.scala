@@ -25,10 +25,10 @@ abstract class WithPhantomJS() extends Around with Scope {
   }
 
   override def around[T: AsResult](body: => T): Result = {
-    try {
+//    try {
       running(TestServer(port, app))(AsResult.effectively(body))
-    } finally {
-      browser.quit()
-    }
+//    } finally {
+//      browser.quit()
+//    }
   }
 }
