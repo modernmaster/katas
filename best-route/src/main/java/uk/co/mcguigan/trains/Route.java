@@ -1,19 +1,19 @@
 package uk.co.mcguigan.trains;
 
-public class Route implements Edge {
-    private final Vertex target;
-    private final Integer weight;
+public class Route {
+    private final Station nextStation;
+    private final Integer distance;
 
-    public Route(final Vertex target, final Integer weight) {
-        this.target = target;
-        this.weight = weight;
+    public Route(final Station nextStation, final Integer distance) {
+        this.nextStation = nextStation;
+        this.distance = distance;
     }
 
-    public Vertex getNextStation() {
-        return target;
+    public Station getNextStation() {
+        return nextStation;
     }
 
     public Integer getDistance() {
-        return weight;
+        return distance;
     }
 }

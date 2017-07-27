@@ -2,9 +2,9 @@ package uk.co.mcguigan.trains;
 
 import static java.lang.Integer.MAX_VALUE;
 
-public class Station implements Vertex, Comparable<Vertex>  {
+public class Station implements Comparable<Station>  {
     private final String name;
-    private Edge[] emanatingEdges;
+    private Route[] getNextStations;
     private Integer minDistance;
 
     public Station(final String station) {
@@ -24,19 +24,19 @@ public class Station implements Vertex, Comparable<Vertex>  {
         this.minDistance = distance;
     }
 
-    public Edge[] getEmanatingEdges() {
-        return emanatingEdges;
+    public Route[] getNextStations() {
+        return getNextStations;
     }
 
-    public void setEmanatingEdges(final Edge[] emanatingEdges) {
-        this.emanatingEdges = emanatingEdges;
+    public void setNextStations(final Route[] emanatingEdges) {
+        this.getNextStations = emanatingEdges;
     }
 
     public String toString() {
         return name;
     }
 
-    public int compareTo(Vertex other) {
-        return Integer.compare(minDistance, other.getMinimumDistance());
+    public int compareTo(Station other) {
+        return minDistance.compareTo(other.getMinimumDistance());
     }
 }
