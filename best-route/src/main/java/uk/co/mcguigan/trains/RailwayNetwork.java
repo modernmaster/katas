@@ -6,9 +6,9 @@ public interface RailwayNetwork {
 
 
     Integer calculateNumberOfRoutesWithExactNumberOfStops(final Station startingStation, final Station terminatingStation,
-                                                          final Integer exactNumberOfStops, final Integer currentNumberOfMatches);
+                                                          final Integer exactNumberOfStops);
 
-    Integer calculateShortestDistance(final Station startingStation, final Station terminatingStation);
+    String calculateShortestDistance(final Station startingStation, final Station terminatingStation);
 
     String calculateDistance(final List<Station> visitedStations);
 

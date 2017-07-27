@@ -13,11 +13,22 @@ class KiwilandRailwayNetwork {
     }
 
     private void constructRailwayNetwork() {
-        STATION_A.setNextStations(new Route[]{new Route(STATION_B, 5), new Route(STATION_D, 5), new Route(STATION_E, 7)});
-        STATION_B.setNextStations(new Route[]{new Route(STATION_C, 4)});
-        STATION_C.setNextStations(new Route[]{new Route(STATION_E, 2), new Route(STATION_D, 8)});
-        STATION_D.setNextStations(new Route[]{new Route(STATION_E, 6), new Route(STATION_C, 8)});
-        STATION_E.setNextStations(new Route[]{new Route(STATION_B, 3)});
+
+        final int stationDistanceAB = 5;
+        final int stationDistanceAD = 5;
+        final int stationDistanceAE = 7;
+        final int stationDistanceBC = 4;
+        final int stationDistanceCE = 2;
+        final int stationDistanceCD = 8;
+        final int stationDistanceDE = 6;
+        final int stationDistanceDC = 8;
+        final int stationDistanceEB = 3;
+        STATION_A.setNextStations(new Route[]{new Route(STATION_B, stationDistanceAB), new Route(STATION_D, stationDistanceAD),
+                new Route(STATION_E, stationDistanceAE)});
+        STATION_B.setNextStations(new Route[]{new Route(STATION_C, stationDistanceBC)});
+        STATION_C.setNextStations(new Route[]{new Route(STATION_E, stationDistanceCE), new Route(STATION_D, stationDistanceCD)});
+        STATION_D.setNextStations(new Route[]{new Route(STATION_E, stationDistanceDE), new Route(STATION_C, stationDistanceDC)});
+        STATION_E.setNextStations(new Route[]{new Route(STATION_B, stationDistanceEB)});
     }
 
 }

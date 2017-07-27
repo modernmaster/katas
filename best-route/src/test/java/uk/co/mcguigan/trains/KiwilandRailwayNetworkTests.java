@@ -2,7 +2,7 @@ package uk.co.mcguigan.trains;
 
 import org.junit.Before;
 import org.junit.Test;
-import uk.co.mcguigan.trains.RailwayCalculators.RailwayCalculator;
+import uk.co.mcguigan.trains.networkcalculators.RailwayCalculator;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,12 +12,11 @@ import static org.junit.Assert.assertThat;
 
 public class KiwilandRailwayNetworkTests {
 
-    private KiwilandRailwayNetwork kiwilandRailwayNetwork;
     private RailwayNetwork railwayNetwork;
 
     @Before
     public void setUp() {
-        kiwilandRailwayNetwork = new KiwilandRailwayNetwork();
+        new KiwilandRailwayNetwork();
         railwayNetwork = new RailwayCalculator();
     }
 
@@ -98,9 +97,8 @@ public class KiwilandRailwayNetworkTests {
         Station start = KiwilandRailwayNetwork.STATION_C;
         Station finish = KiwilandRailwayNetwork.STATION_C;
         final Integer maximumNumberStops = 3;
-        Integer currentNumberOfStops = 0;
         //When
-        Integer numberOfRoutes = railwayNetwork.calculateNumberOfRoutesWithExactNumberOfStops(start, finish, maximumNumberStops, currentNumberOfStops);
+        Integer numberOfRoutes = railwayNetwork.calculateNumberOfRoutesWithExactNumberOfStops(start, finish, maximumNumberStops);
         //Then
         assertThat(numberOfRoutes, equalTo(2));
         System.out.printf("Output #6: %s\n", numberOfRoutes);
@@ -112,9 +110,8 @@ public class KiwilandRailwayNetworkTests {
         Station start = KiwilandRailwayNetwork.STATION_A;
         Station finish = KiwilandRailwayNetwork.STATION_C;
         final Integer maximumNumberStops = 4;
-        Integer currentNumberOfStops = 0;
         //When
-        Integer numberOfRoutes = railwayNetwork.calculateNumberOfRoutesWithExactNumberOfStops(start, finish, maximumNumberStops, currentNumberOfStops);
+        Integer numberOfRoutes = railwayNetwork.calculateNumberOfRoutesWithExactNumberOfStops(start, finish, maximumNumberStops);
         //Then
         assertThat(numberOfRoutes, equalTo(3));
         System.out.printf("Output #7: %s\n", numberOfRoutes);
@@ -126,10 +123,10 @@ public class KiwilandRailwayNetworkTests {
         Station startStation = KiwilandRailwayNetwork.STATION_A;
         Station endStation = KiwilandRailwayNetwork.STATION_C;
         //When
-        Integer distance = railwayNetwork.calculateShortestDistance(startStation, endStation);
+        String distance = railwayNetwork.calculateShortestDistance(startStation, endStation);
         //Then
         System.out.printf("Output #8: %s\n", distance);
-        assertThat(distance, equalTo(9));
+        assertThat(distance, equalTo("9"));
     }
 
     @Test
@@ -138,9 +135,9 @@ public class KiwilandRailwayNetworkTests {
         final Station startStation = KiwilandRailwayNetwork.STATION_B;
         final Station endStation = KiwilandRailwayNetwork.STATION_B;
         //When
-        Integer distance = railwayNetwork.calculateShortestDistance(startStation, endStation);
+        String distance = railwayNetwork.calculateShortestDistance(startStation, endStation);
         //Then
-        assertThat(distance, equalTo(9));
+        assertThat(distance, equalTo("9"));
         System.out.printf("Output #9: %s\n", distance);
     }
 

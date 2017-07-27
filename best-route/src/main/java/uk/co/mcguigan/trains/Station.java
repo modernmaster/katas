@@ -36,7 +36,7 @@ public class Station implements Comparable<Station> {
         return name;
     }
 
-    public int compareTo(Station other) {
+    public int compareTo(final Station other) {
         return minDistance.compareTo(other.getMinimumDistance());
     }
 }
