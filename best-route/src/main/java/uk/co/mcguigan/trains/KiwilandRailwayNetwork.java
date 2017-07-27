@@ -1,14 +1,14 @@
 package uk.co.mcguigan.trains;
 
-public class KiwilandRailwayNetwork {
+class KiwilandRailwayNetwork {
 
-    public static final Station STATION_A = new Station("A");
-    public static final Station STATION_B = new Station("B");
-    public static final Station STATION_C = new Station("C");
-    public static final Station STATION_D = new Station("D");
-    public static final Station STATION_E = new Station("E");
+    static final Station STATION_A = new Station("A");
+    static final Station STATION_B = new Station("B");
+    static final Station STATION_C = new Station("C");
+    static final Station STATION_D = new Station("D");
+    static final Station STATION_E = new Station("E");
 
-    public KiwilandRailwayNetwork() {
+    KiwilandRailwayNetwork() {
         constructRailwayNetwork();
     }
 

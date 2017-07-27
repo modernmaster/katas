@@ -2,6 +2,7 @@ package uk.co.mcguigan.trains;
 
 import org.junit.Before;
 import org.junit.Test;
+import uk.co.mcguigan.trains.RailwayCalculators.RailwayCalculator;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class KiwilandRailwayNetworkTests {
     @Before
     public void setUp() {
         kiwilandRailwayNetwork = new KiwilandRailwayNetwork();
-        railwayNetwork = new RailwayNetworkImpl();
+        railwayNetwork = new RailwayCalculator();
     }
 
     @Test
