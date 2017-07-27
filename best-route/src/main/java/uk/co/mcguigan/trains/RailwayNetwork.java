@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface RailwayNetwork {
 
-    Station getStation(String name);
 
     Integer calculateNumberOfRoutesWithExactNumberOfStops(final Station startingStation, final Station terminatingStation,
                                                           final Integer exactNumberOfStops, final Integer currentNumberOfMatches);

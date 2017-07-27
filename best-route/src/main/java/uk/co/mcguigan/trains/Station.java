@@ -2,7 +2,7 @@ package uk.co.mcguigan.trains;
 
 import static java.lang.Integer.MAX_VALUE;
 
-public class Station implements Comparable<Station>  {
+public class Station implements Comparable<Station> {
     private final String name;
     private Route[] getNextStations;
     private Integer minDistance;
@@ -28,8 +28,8 @@ public class Station implements Comparable<Station>  {
         return getNextStations;
     }
 
-    public void setNextStations(final Route[] emanatingEdges) {
-        this.getNextStations = emanatingEdges;
+    public void setNextStations(final Route[] nextStations) {
+        this.getNextStations = nextStations;
     }
 
     public String toString() {
