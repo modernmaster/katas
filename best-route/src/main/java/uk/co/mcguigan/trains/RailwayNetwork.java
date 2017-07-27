@@ -31,14 +31,14 @@ public class RailwayNetwork implements Graph {
         if (exactNumberOfStops >= 0) {
             Edge[] routes = startingStation.getEmanatingEdges();
             for (Edge route : routes) {
-                currentNumberOfMatches = calculateNumberOfRoutesWithExactNumberOfStops(route.getTargetVertex(),
+                currentNumberOfMatches = calculateNumberOfRoutesWithExactNumberOfStops(route.getNextStation(),
                         terminatingStation, exactNumberOfStops - 1, currentNumberOfMatches);
             }
         } else if (startingStation.getName().equals(terminatingStation.getName())) {
             currentNumberOfMatches += 1;
             return currentNumberOfMatches;
         }
-        return numberOfMatches;
+        return currentNumberOfMatches;
     }
 
     public Integer calculateNumberOfRoutesUnderASetDistance(final Vertex startingStation, final Vertex terminatingStation,
@@ -56,8 +56,8 @@ public class RailwayNetwork implements Graph {
             Edge[] routes = currentStation.getEmanatingEdges();
             Vertex next = iterator.next();
             for (Edge route : routes) {
-                if (next.getName().equals(route.getTargetVertex().getName())) {
-                    weight += route.getWeight();
+                if (next.getName().equals(route.getNextStation().getName())) {
+                    weight += route.getDistance();
                     matched = true;
                     break;
                 }
@@ -85,11 +85,11 @@ public class RailwayNetwork implements Graph {
         Vertex currentStation = stationsToVisit.remove();
         Edge[] routes = currentStation.getEmanatingEdges();
         for (Edge route : routes) {
-            Vertex nextStation = route.getTargetVertex();
-            if (nextStation.getMinimumDistance() == 0 || nextStation.getMinimumDistance() >= route.getWeight() + currentStation.getMinimumDistance()) {
-                nextStation.setMinimumDistance(route.getWeight() + currentStation.getMinimumDistance());
-                if (!route.getTargetVertex().equals(terminatingStation)) {
-                    stationsToVisit.add(route.getTargetVertex());
+            Vertex nextStation = route.getNextStation();
+            if (nextStation.getMinimumDistance() == 0 || nextStation.getMinimumDistance() >= route.getDistance() + currentStation.getMinimumDistance()) {
+                nextStation.setMinimumDistance(route.getDistance() + currentStation.getMinimumDistance());
+                if (!route.getNextStation().equals(terminatingStation)) {
+                    stationsToVisit.add(route.getNextStation());
                 }
             }
         }
@@ -101,11 +101,11 @@ public class RailwayNetwork implements Graph {
         Integer currentMatches = matches;
         Edge[] routes = startingStation.getEmanatingEdges();
         for (Edge route : routes) {
-            if (route.getWeight() < distanceRemaining) {
-                if (route.getTargetVertex().equals(terminatingStation)) {
+            if (route.getDistance() < distanceRemaining) {
+                if (route.getNextStation().equals(terminatingStation)) {
                     currentMatches += 1;
                 }
-                currentMatches = depthFirstTraversal(route.getTargetVertex(), terminatingStation, distanceRemaining - route.getWeight(), matches);
+                currentMatches = depthFirstTraversal(route.getNextStation(), terminatingStation, distanceRemaining - route.getDistance(), currentMatches);
             }
         }
         return currentMatches;

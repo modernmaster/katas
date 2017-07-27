@@ -7,7 +7,7 @@ public interface Graph {
     Vertex getVertex(String name);
 
     Integer calculateNumberOfRoutesWithExactNumberOfStops(final Vertex startingStation, final Vertex terminatingStation,
-                                                          final Integer exactNumberOfStops, final Integer currentNumberOfMatches);
+                                                          final Integer exactNumberOfStops, Integer currentNumberOfMatches);
 
     Integer calculateShortestDistance(final Vertex sourceVertex, final Vertex targetVertex);
 

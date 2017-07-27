@@ -9,11 +9,11 @@ public class Route implements Edge {
         this.weight = weight;
     }
 
-    public Vertex getTargetVertex() {
+    public Vertex getNextStation() {
         return target;
     }
 
-    public Integer getWeight() {
+    public Integer getDistance() {
         return weight;
     }
 }
