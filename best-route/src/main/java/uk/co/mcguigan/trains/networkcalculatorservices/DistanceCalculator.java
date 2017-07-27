@@ -1,4 +1,4 @@
-package uk.co.mcguigan.trains.networkcalculators;
+package uk.co.mcguigan.trains.networkcalculatorservices;
 
 import uk.co.mcguigan.trains.Route;
 import uk.co.mcguigan.trains.Station;

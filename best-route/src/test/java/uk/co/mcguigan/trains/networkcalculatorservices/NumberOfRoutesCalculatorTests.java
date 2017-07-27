@@ -1,4 +1,4 @@
-package uk.co.mcguigan.trains.networkcalculators;
+package uk.co.mcguigan.trains.networkcalculatorservices;
 
 import org.junit.Before;
 import org.junit.Test;

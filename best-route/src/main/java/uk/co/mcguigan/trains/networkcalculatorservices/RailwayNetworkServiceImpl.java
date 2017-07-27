@@ -1,16 +1,16 @@
-package uk.co.mcguigan.trains.networkcalculators;
+package uk.co.mcguigan.trains.networkcalculatorservices;
 
-import uk.co.mcguigan.trains.RailwayNetwork;
+import uk.co.mcguigan.trains.RailwayNetworkService;
 import uk.co.mcguigan.trains.Station;
 
 import java.util.List;
 
-public class RailwayCalculator implements RailwayNetwork {
+public class RailwayNetworkServiceImpl implements RailwayNetworkService {
 
     private DistanceCalculator distanceCalculator;
     private NumberOfRoutesCalculator numberOfRoutesCalculator;
 
-    public RailwayCalculator() {
+    public RailwayNetworkServiceImpl() {
         distanceCalculator = new DistanceCalculator();
         numberOfRoutesCalculator = new NumberOfRoutesCalculator();
     }

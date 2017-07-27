@@ -1,4 +1,4 @@
-package uk.co.mcguigan.trains.networkcalculators;
+package uk.co.mcguigan.trains.networkcalculatorservices;
 
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
-import static uk.co.mcguigan.trains.networkcalculators.DistanceCalculator.NO_SUCH_ROUTE;
+import static uk.co.mcguigan.trains.networkcalculatorservices.DistanceCalculator.NO_SUCH_ROUTE;
 
 public class DistanceCalculatorTests {
 

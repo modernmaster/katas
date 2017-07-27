@@ -1,22 +1,26 @@
-package uk.co.mcguigan.trains.networkcalculators;
+package uk.co.mcguigan.trains.networkcalculatorservices;
 
 import uk.co.mcguigan.trains.Route;
 import uk.co.mcguigan.trains.Station;
 
 class NumberOfRoutesCalculator {
 
+    Integer calculateNumberOfRoutesUnderASetDistance(final Station startingStation, final Station terminatingStation,
+                                                     final Integer maximumDistance) {
+        Integer matches = 0;
+        return depthFirstTraversal(startingStation, terminatingStation, maximumDistance, matches);
+    }
+
     private static Integer depthFirstTraversal(final Station startingStation, final Station terminatingStation,
                                                final Integer distanceRemaining, final Integer matches) {
         if (startingStation == null || terminatingStation == null) {
             return 0;
         }
-
         Integer currentMatches = matches;
         Route[] routes = startingStation.getNextStations();
         if (routes == null) {
             return currentMatches;
         }
-
         for (Route route : routes) {
             if (route.getDistance() < distanceRemaining) {
                 if (route.getNextStation().equals(terminatingStation)) {
@@ -56,11 +60,5 @@ class NumberOfRoutesCalculator {
             return currentNumberOfMatches;
         }
         return currentNumberOfMatches;
-    }
-
-    Integer calculateNumberOfRoutesUnderASetDistance(final Station startingStation, final Station terminatingStation,
-                                                     final Integer maximumDistance) {
-        Integer matches = 0;
-        return depthFirstTraversal(startingStation, terminatingStation, maximumDistance, matches);
     }
 }

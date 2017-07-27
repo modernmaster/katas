@@ -2,7 +2,7 @@ package uk.co.mcguigan.trains;
 
 import java.util.List;
 
-public interface RailwayNetwork {
+public interface RailwayNetworkService {
 
 
     Integer calculateNumberOfRoutesWithExactNumberOfStops(final Station startingStation, final Station terminatingStation,
