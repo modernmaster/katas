@@ -6,6 +6,7 @@ target
 .checkstyle
 .pmd
 .pmdruleset.xml
+.DS_Store
 node_modules
 /repository/
 repository.xml

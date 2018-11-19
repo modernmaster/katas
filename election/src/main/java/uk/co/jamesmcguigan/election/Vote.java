@@ -1,31 +1,23 @@
 package uk.co.jamesmcguigan.election;
 
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
 
 public class Vote {
 
-    private DateTime timePlaced;
-    private String decision;
-    private Vote next;
+  private String candidate;
+  private LocalDateTime dateTime;
 
-    public Vote (final DateTime timePlaced, final String decision) {
-        this.timePlaced = timePlaced;
-        this.decision = decision;
-    }
 
-    public DateTime getTimePlaced() {
-        return timePlaced;
-    }
+  public Vote(final String candidate, final LocalDateTime dateTime) {
+    this.candidate = candidate;
+    this.dateTime = dateTime;
+  }
 
-    public String getDecision() {
-        return decision;
-    }
+  public String getCandidate() {
+    return candidate;
+  }
 
-    public void setNext(Vote next) {
-        this.next = next;
-    }
-
-    public Vote getNext() {
-        return next;
-    }
+  public LocalDateTime getDateTime() {
+    return dateTime;
+  }
 }
