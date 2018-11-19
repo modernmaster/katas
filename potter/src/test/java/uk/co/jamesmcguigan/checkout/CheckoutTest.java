@@ -3,145 +3,108 @@ package uk.co.jamesmcguigan.checkout;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.assertThat;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CheckoutTest {
 
-    private Checkout checkout;
-    private static final double bookPrice = 8;
+    private Bookstore bookstore;
 
     @Before
-    public void setUp() {
-        checkout = new Checkout();
+    public void setup() {
+        bookstore = new Bookstore();
     }
 
     @Test
-    public void testCostEightForOneOfAnyBook() {
+    public void testAFirstBookCosts8EUR() {
 
-        double expectedSubtotal = 8;
-        Book book = new Book(Book.Books.Book1.toString(), bookPrice);
-        Basket basket = new Basket();
-        basket.addItem(book);
+        List<String> books = new ArrayList();
+        books.add("first book");
+        Double price = bookstore.buyBooks(books);
 
-        double actualSubtotal = checkout.calculateSubtotal(basket);
+        assertThat(price, equalTo(8.0));
 
-        assertThat(expectedSubtotal, equalTo(actualSubtotal));
     }
 
     @Test
-    public void testGetNoDiscountForTwoOfTheSameBook() {
+    public void testTwoDifferentBooksFromSeriesGetA5PercentDiscount() {
 
-        double expectedSubtotal = 16;
-        Book book = new Book(Book.Books.Book1.toString(), bookPrice);
-        Book book2 = new Book(Book.Books.Book1.toString(), bookPrice);
-        Basket basket = new Basket();
-        basket.addItem(book);
-        basket.addItem(book2);
+        List<String> books = new ArrayList();
+        books.add("first book");
+        books.add("second book");
+        Double price = bookstore.buyBooks(books);
 
-        double actualSubtotal = checkout.calculateSubtotal(basket);
-
-        assertThat(actualSubtotal, equalTo(expectedSubtotal));
-    }
-
-
-    @Test
-    public void testGetFivePercentDiscountForTwoDifferentBooks() {
-
-        double expectedSubtotal = 15.2;
-        Book book = new Book(Book.Books.Book1.toString(), bookPrice);
-        Book book2 = new Book(Book.Books.Book2.toString(), bookPrice);
-        Basket basket = new Basket();
-        basket.addItem(book);
-        basket.addItem(book2);
-
-        double actualSubtotal = checkout.calculateSubtotal(basket);
-
-        assertThat(actualSubtotal, equalTo(expectedSubtotal));
+        assertThat(price, equalTo(15.2));
     }
 
     @Test
-    public void testGetTenPercentDiscountForThreeDifferentBooks() {
+    public void testthreeDifferentBooksFromSeriesGetA10PercentDiscount() {
 
-        double expectedSubtotal = 21.6;
-        Book book = new Book(Book.Books.Book1.toString(), bookPrice);
-        Book book2 = new Book(Book.Books.Book2.toString(), bookPrice);
-        Book book3 = new Book(Book.Books.Book3.toString(), bookPrice);
+        List<String> books = new ArrayList();
+        books.add("first book");
+        books.add("second book");
+        books.add("third book");
+        Double price = bookstore.buyBooks(books);
 
-        Basket basket = new Basket();
-        basket.addItem(book);
-        basket.addItem(book2);
-        basket.addItem(book3);
-
-        double actualSubtotal = checkout.calculateSubtotal(basket);
-
-        assertThat(actualSubtotal, equalTo(expectedSubtotal));
-    }
-
-
-    @Test
-    public void testGetTwentyPercentDiscountForFourDifferentBooksMultipliedTwice() {
-
-        double expectedSubtotal = 51.2;
-
-        Basket basket = new Basket();
-        basket.addItem(new Book(Book.Books.Book1.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book2.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book3.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book4.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book1.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book2.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book3.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book4.toString(), bookPrice));
-
-        double actualSubtotal = checkout.calculateSubtotal(basket);
-
-        assertThat(actualSubtotal, equalTo(expectedSubtotal));
-    }
-
-
-    @Test
-    public void testGetTwentyPercentDiscountForFourDifferentBooksMultipliedTwiceWhenFiveBooksIsMoreExpensive() {
-
-        double expectedSubtotal = 51.2;
-
-        Basket basket = new Basket();
-        basket.addItem(new Book(Book.Books.Book1.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book1.toString(), bookPrice));
-
-        basket.addItem(new Book(Book.Books.Book2.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book2.toString(), bookPrice));
-
-        basket.addItem(new Book(Book.Books.Book3.toString(), bookPrice));
-        basket.addItem(new Book(Book.Books.Book3.toString(), bookPrice));
-
-        basket.addItem(new Book(Book.Books.Book4.toString(), bookPrice));
-
-        basket.addItem(new Book(Book.Books.Book5.toString(), bookPrice));
-
-        double actualSubtotal = checkout.calculateSubtotal(basket);
-
-        assertThat(actualSubtotal, equalTo(expectedSubtotal));
+        assertThat(price, equalTo(21.6));
     }
 
     @Test
-    public void testGetTwentyFivePercentDiscountForFiveDifferentBooks() {
+    public void testFourDifferentBooksFromSeriesGetA20PercentDiscount() {
 
-        double expectedSubtotal = 30;
-        Book book = new Book(Book.Books.Book1.toString(), bookPrice);
-        Book book2 = new Book(Book.Books.Book2.toString(), bookPrice);
-        Book book3 = new Book(Book.Books.Book3.toString(), bookPrice);
-        Book book4 = new Book(Book.Books.Book4.toString(), bookPrice);
-        Book book5 = new Book(Book.Books.Book5.toString(), bookPrice);
-        Basket basket = new Basket();
-        basket.addItem(book);
-        basket.addItem(book2);
-        basket.addItem(book3);
-        basket.addItem(book4);
-        basket.addItem(book5);
+        List<String> books = new ArrayList();
+        books.add("first book");
+        books.add("second book");
+        books.add("third book");
+        books.add("fourth book");
+        Double price = bookstore.buyBooks(books);
 
-        double actualSubtotal = checkout.calculateSubtotal(basket);
-
-        assertThat(actualSubtotal, equalTo(expectedSubtotal));
+        assertThat(price, equalTo(25.6));
     }
+
+    @Test
+    public void testFifthDifferentBooksFromSeriesGetA20PercentDiscount() {
+
+        List<String> books = new ArrayList();
+        books.add("first book");
+        books.add("second book");
+        books.add("third book");
+        books.add("fourth book");
+        books.add("fifth book");
+        Double price = bookstore.buyBooks(books);
+
+        assertThat(price, equalTo(32.0));
+    }
+
+    @Test
+    public void testFourBooksWithOneSameTitle() {
+
+        List<String> books = new ArrayList();
+        books.add("first book");
+        books.add("second book");
+        books.add("third book");
+        books.add("third book");
+
+        Double price = bookstore.buyBooks(books);
+
+        assertThat(price, equalTo(29.6));
+    }
+
+    @Test
+    public void testMoreThanFiveBooks() {
+
+        List<String> books = new ArrayList();
+        books.add("first book");
+        books.add("second book");
+        books.add("third book");
+        books.add("third book");
+
+        Double price = bookstore.buyBooks(books);
+
+        assertThat(price, equalTo(29.6));
+    }
+
 }
