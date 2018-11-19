@@ -1,30 +1,21 @@
 package uk.co.jamesmcguigan.election;
 
-public class BallotBox {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Vote head;
-    private Vote current;
+class BallotBox {
 
+  private List<Vote> votes;
 
-    public void add(Vote vote) {
-        if(head == null) {
-            head = vote;
-        } else {
-            current.setNext(vote);
-        }
-        current = vote;
-    }
+  BallotBox() {
+    this.votes = new ArrayList<>();
+  }
 
-    public Vote next() {
-        Vote prev = current;
-        current = prev.getNext();
-        return prev;
-    }
+  public void addVote(final Vote vote) {
+    votes.add(vote);
+  }
 
-    public void reset() {
-        current = head;
-    }
-
-
-
+  List<Vote> emptyBox() {
+    return votes;
+  }
 }
