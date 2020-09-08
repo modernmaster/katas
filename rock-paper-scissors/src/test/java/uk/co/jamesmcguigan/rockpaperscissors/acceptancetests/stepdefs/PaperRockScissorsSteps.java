@@ -1,15 +1,18 @@
 package uk.co.jamesmcguigan.rockpaperscissors.acceptancetests.stepdefs;
 
+import java.net.URL;
+
 import com.saucelabs.common.SauceOnDemandAuthentication;
 import com.saucelabs.common.SauceOnDemandSessionIdProvider;
 import com.saucelabs.junit.SauceOnDemandTestWatcher;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,11 +24,9 @@ import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.URL;
-
 public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
 
-    private static final String HTTP_LOCALHOST = "http://localhost:9002/";
+    private static final String HTTP_LOCALHOST = "http://localhost:9002/rock-paper-scissors/";
     private static final String PLAYER_1_GESTURE = "player1Gesture";
     private static final String PLAYER1_HUMAN = "player1-human";
     private static final String PLAYER1_COMPUTER = "player1-computer";
@@ -34,7 +35,7 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     private static final String WINNING_PLAYER = "winning-player";
     private static final String PLAY_GAME = "play-game";
     private static final String WINNING_PLAYER1 = "winning-player";
-    private SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USER_NAME, KEY);
+    private final SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USER_NAME, KEY);
 
     @Rule
     public SauceOnDemandTestWatcher resultReportingTestWatcher = new SauceOnDemandTestWatcher(this, authentication);
@@ -48,14 +49,14 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
 
     @Before
     public void initSelenium(Scenario scenario) throws Throwable {
-        DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
-
-        desiredCapabilities.setCapability(CapabilityType.PLATFORM, "Windows XP");
-        desiredCapabilities.setCapability(CapabilityType.VERSION, "43.0");
-        desiredCapabilities.setCapability("build", System.getenv("TRAVIS_BUILD_NUMBER"));
-        desiredCapabilities.setCapability("tunnel-identifier", System.getenv("TRAVIS_JOB_NUMBER"));
-        desiredCapabilities.setCapability("name", "Rock Paper Scissors Test:" + scenario.getName());
-        this.webDriver = new RemoteWebDriver(new URL(URL), desiredCapabilities);
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
+        capabilities.setCapability(CapabilityType.PLATFORM_NAME, "Windows 10");
+        capabilities.setCapability(CapabilityType.VERSION, "59.0");
+        capabilities.setCapability("build", System.getenv("TRAVIS_BUILD_NUMBER"));
+        capabilities.setCapability("tunnel-identifier", System.getenv("TRAVIS_JOB_NUMBER"));
+        capabilities.setCapability("name", "Rock Paper Scissors Test:" + scenario.getName());
+        this.webDriver = new RemoteWebDriver(new URL(URL), capabilities);
         this.sessionId = ((RemoteWebDriver) webDriver).getSessionId();
     }
 
