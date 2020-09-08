@@ -1,7 +1,8 @@
 <web-app id="WebApp_ID" version="2.4"
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+		 metadata-complete="true">
 
 	<display-name>Rock Paper Scissors</display-name>
 
@@ -24,13 +25,13 @@
 <servlet-mapping>
     <servlet-name>jsp</servlet-name>
     <url-pattern>/WEB-INF/views/*</url-pattern>
-</servlet-mapping>	
-	
+</servlet-mapping>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 		/WEB-INF/mvc-dispatcher-servlet.xml
-		/WEB-INF/applicationContext.xml		
+		/WEB-INF/applicationContext.xml
 		</param-value>
 	</context-param>
 
@@ -38,11 +39,6 @@
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>/WEB-INF/log4j.properties</param-value>
 	</context-param>
-	
-	<listener>
-		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-	</listener>
-
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
