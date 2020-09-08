@@ -100,11 +100,12 @@ public class CheckoutTest {
         books.add("first book");
         books.add("second book");
         books.add("third book");
-        books.add("third book");
-
+        books.add("four book");
+        books.add("five book");
+        books.add("five book");
         Double price = bookstore.buyBooks(books);
 
-        assertThat(price, equalTo(29.6));
+        assertThat(price, equalTo(40.0));
     }
 
 }
