@@ -91,6 +91,11 @@
                 <version>5.2.8.RELEASE</version>
             </dependency>
             <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+            </dependency>
+            <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.17</version>
@@ -503,8 +508,10 @@
         <module>potter</module>
         <module>rock-paper-scissors</module>
         <module>best-route</module>
+        <module>power-hands</module>
         <module>fizz-buzz</module>
         <module>election</module>
+        <module>maze-solver</module>
         <!--        <module>web-ui</module>-->
     </modules>
 </project>

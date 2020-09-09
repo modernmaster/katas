@@ -1,15 +1,14 @@
 package pokergame;
 
-import pokergame.Card.suit;
-import pokergame.Card.value;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.junit.Before;
+import org.junit.Test;
+import pokergame.Card.SUIT;
+import pokergame.Card.VALUE;
 
 import static org.hamcrest.CoreMatchers.isA;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -33,11 +32,11 @@ public class PokerTest {
 
     private List<Card> createCards() {
         List<Card> cards = new ArrayList<Card>();
-        value[] values = value.values();
-        suit[] suits = suit.values();
+        VALUE[] VALUES = VALUE.values();
+        SUIT[] SUITS = SUIT.values();
         for (int i = 0; i <= 12; i++) {
             for (int j = 0; j <= 3; j++) {
-                cards.add(new Card(values[i], suits[j]));
+                cards.add(new Card(VALUES[i], SUITS[j]));
             }
         }
         return cards;
@@ -54,7 +53,7 @@ public class PokerTest {
     public void testMustContainAtleastOneDiamondSpadeHeartClub() {
         List<Card> cards = poker.getCards();
         for (Card card : cards) {
-            assertThat(card.getSuit(), isA(suit.class));
+            assertThat(card.getSuit(), isA(SUIT.class));
         }
     }
 
@@ -62,14 +61,14 @@ public class PokerTest {
     public void testCardMustContainAValue() {
         List<Card> cards = poker.getCards();
         for (Card card : cards) {
-            assertThat(card.getValue(), isA(value.class));
+            assertThat(card.getValue(), isA(VALUE.class));
         }
     }
 
     @Test
     public void testAceHigherThanTwo() {
-        Card cardAce = new Card(value.ACE, suit.HEARTS);
-        Card cardTwo = new Card(value.FOUR, suit.HEARTS);
+        Card cardAce = new Card(VALUE.ACE, SUIT.HEARTS);
+        Card cardTwo = new Card(VALUE.FOUR, SUIT.HEARTS);
         cardAce.compareTo(cardTwo);
         assertThat(cardAce.compareTo(cardTwo), greaterThan(0));
     }

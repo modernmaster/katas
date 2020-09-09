@@ -3,17 +3,15 @@ package pokergame;
 import java.util.Collections;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class Poker {
 
+    private static final int NUMBER_OF_CARDS = 5;
     private List<Card> cards;
-
-    public Poker(List<Card> cards) {
-        this.cards = cards;
-    }
-
-    public List<Card> getCards() {
-        return cards;
-    }
 
     public List<Card> dealCards() {
         shuffleCards();
@@ -21,7 +19,7 @@ public class Poker {
     }
 
     private List<Card> pickFiveCards() {
-        return cards.subList(0, 5);
+        return cards.subList(0, NUMBER_OF_CARDS);
     }
 
     private void shuffleCards() {
