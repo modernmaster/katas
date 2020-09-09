@@ -1,6 +1,6 @@
 package uk.co.mcguigan.fizzbuzz;
 
-public final class LuckySubstitute extends AbstractSubstitute  {
+public final class LuckySubstitute extends AbstractSubstitute {
 
     public static final String LUCKY = "lucky";
 

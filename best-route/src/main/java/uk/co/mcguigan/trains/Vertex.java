@@ -3,9 +3,9 @@ package uk.co.mcguigan.trains;
 public interface Vertex {
     String getName();
 
-    void setEmanatingEdges(final Edge[] emanatingEdges);
-
     Edge[] getEmanatingEdges();
+
+    void setEmanatingEdges(final Edge[] emanatingEdges);
 
     Integer getMinimumDistance();
 

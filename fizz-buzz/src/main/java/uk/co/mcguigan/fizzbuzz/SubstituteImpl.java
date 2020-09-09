@@ -1,15 +1,14 @@
 package uk.co.mcguigan.fizzbuzz;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 public final class SubstituteImpl implements SubstituteGenerator {
 
-    private List<Substitute> substitutes;
     private static final String INTEGERS_MESSAGE = "integer: %s%n";
     private static final int MIN_VALUE = 1;
     private static final String MIN_VALUE_EXCEPTION_MESSAGE = "Minimum value %s in range is less than %s";
@@ -17,6 +16,7 @@ public final class SubstituteImpl implements SubstituteGenerator {
     private static final String MIN_VALUE_GREATER_THAN_MAN_EXCEPTION_MESSAGE = "Minimum value is greater than maximum %s > %s";
     private static final int MAX_VALUE = 100;
     private static final String REPLACEMENT_MESSAGE = "%s: %s%n";
+    private final List<Substitute> substitutes;
 
     public SubstituteImpl() {
         substitutes = new ArrayList<Substitute>();

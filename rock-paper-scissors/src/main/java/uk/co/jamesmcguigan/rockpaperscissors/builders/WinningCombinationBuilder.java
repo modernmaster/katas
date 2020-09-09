@@ -1,9 +1,9 @@
 package uk.co.jamesmcguigan.rockpaperscissors.builders;
 
+import java.util.LinkedList;
+
 import uk.co.jamesmcguigan.rockpaperscissors.models.Gesture;
 import uk.co.jamesmcguigan.rockpaperscissors.models.WinningCombination;
-
-import java.util.LinkedList;
 
 public class WinningCombinationBuilder {
     private LinkedList<WinningCombination> winningCombinations;

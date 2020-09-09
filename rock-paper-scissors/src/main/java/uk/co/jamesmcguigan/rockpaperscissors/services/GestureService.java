@@ -1,11 +1,11 @@
 package uk.co.jamesmcguigan.rockpaperscissors.services;
 
+import java.util.LinkedList;
+import java.util.Random;
+
 import uk.co.jamesmcguigan.rockpaperscissors.builders.GestureBuilder;
 import uk.co.jamesmcguigan.rockpaperscissors.models.Gesture;
 import uk.co.jamesmcguigan.rockpaperscissors.models.Player;
-
-import java.util.LinkedList;
-import java.util.Random;
 
 public class GestureService implements IGestureService {
     public LinkedList<Gesture> getAllGestures() {

@@ -35,7 +35,7 @@ public class FizzBuzzTests {
         Assert.assertEquals(expectedOutput, actualOutput);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testOutputExceptionWithMinimumValueOfZero() {
         final int minimumValue = 0;
         final int maximumValue = 20;
@@ -43,7 +43,7 @@ public class FizzBuzzTests {
         fizzBuzz.generateSubstitutedSequence(minimumValue, maximumValue);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testOutputExceptionWithNegativeNumbers() {
         final int minimumValue = -1;
         final int maximumValue = 20;
@@ -51,7 +51,7 @@ public class FizzBuzzTests {
         fizzBuzz.generateSubstitutedSequence(minimumValue, maximumValue);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testOutputExceptionWithMinimumValueGreaterThanMaximum() {
         final int minimumValue = 20;
         final int maximumValue = 1;
@@ -59,7 +59,7 @@ public class FizzBuzzTests {
         fizzBuzz.generateSubstitutedSequence(minimumValue, maximumValue);
     }
 
-    @Test(expected=IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testOutputWithNumbersGreaterThanDefinedMaximum() {
         final int minimumValue = 1;
         final int maximumValue = 101;
@@ -83,7 +83,7 @@ public class FizzBuzzTests {
     }
 
     @Test
-    public void testOutputACorrectRepresentationOfReport(){
+    public void testOutputACorrectRepresentationOfReport() {
         final int minimumValue = 1;
         final int maximumValue = 20;
         final String expectedOutput = "1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz \r\n"

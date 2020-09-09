@@ -1,11 +1,11 @@
 package uk.co.mcguigan.trains;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.LinkedList;
-import java.util.List;
 
 import static org.hamcrest.Matchers.equalTo;
 

@@ -8,12 +8,44 @@ import java.util.Queue;
 public class RailwayNetwork implements Graph {
 
     private static final String NO_SUCH_ROUTE = "NO SUCH ROUTE";
+    private final Vertex[] stations;
 
     public RailwayNetwork(final Vertex[] stations) {
         this.stations = stations;
     }
 
-    private final Vertex[] stations;
+    private static void breadthFirstSearch(final Queue<Vertex> stationsToVisit, final Vertex terminatingStation) {
+        if (stationsToVisit.isEmpty()) {
+            return;
+        }
+        Vertex currentStation = stationsToVisit.remove();
+        Edge[] routes = currentStation.getEmanatingEdges();
+        for (Edge route : routes) {
+            Vertex nextStation = route.getTargetVertex();
+            if (nextStation.getMinimumDistance() == 0 || nextStation.getMinimumDistance() >= route.getWeight() + currentStation.getMinimumDistance()) {
+                nextStation.setMinimumDistance(route.getWeight() + currentStation.getMinimumDistance());
+                if (!route.getTargetVertex().equals(terminatingStation)) {
+                    stationsToVisit.add(route.getTargetVertex());
+                }
+            }
+        }
+        breadthFirstSearch(stationsToVisit, terminatingStation);
+    }
+
+    private static Integer depthFirstTraversal(final Vertex startingStation, final Vertex terminatingStation,
+                                               final Integer distanceRemaining, final Integer matches) {
+        Integer currentMatches = matches;
+        Edge[] routes = startingStation.getEmanatingEdges();
+        for (Edge route : routes) {
+            if (route.getWeight() < distanceRemaining) {
+                if (route.getTargetVertex().equals(terminatingStation)) {
+                    currentMatches += 1;
+                }
+                currentMatches = depthFirstTraversal(route.getTargetVertex(), terminatingStation, distanceRemaining - route.getWeight(), matches);
+            }
+        }
+        return currentMatches;
+    }
 
     public Vertex getVertex(final String name) {
         for (Vertex station : stations) {
@@ -76,39 +108,6 @@ public class RailwayNetwork implements Graph {
         queue.add(startingStation);
         breadthFirstSearch(queue, terminatingStation);
         return terminatingStation.getMinimumDistance();
-    }
-
-    private static void breadthFirstSearch(final Queue<Vertex> stationsToVisit, final Vertex terminatingStation) {
-        if (stationsToVisit.isEmpty()) {
-            return;
-        }
-        Vertex currentStation = stationsToVisit.remove();
-        Edge[] routes = currentStation.getEmanatingEdges();
-        for (Edge route : routes) {
-            Vertex nextStation = route.getTargetVertex();
-            if (nextStation.getMinimumDistance() == 0 || nextStation.getMinimumDistance() >= route.getWeight() + currentStation.getMinimumDistance()) {
-                nextStation.setMinimumDistance(route.getWeight() + currentStation.getMinimumDistance());
-                if (!route.getTargetVertex().equals(terminatingStation)) {
-                    stationsToVisit.add(route.getTargetVertex());
-                }
-            }
-        }
-        breadthFirstSearch(stationsToVisit, terminatingStation);
-    }
-
-    private static Integer depthFirstTraversal(final Vertex startingStation, final Vertex terminatingStation,
-                                               final Integer distanceRemaining, final Integer matches) {
-        Integer currentMatches = matches;
-        Edge[] routes = startingStation.getEmanatingEdges();
-        for (Edge route : routes) {
-            if (route.getWeight() < distanceRemaining) {
-                if (route.getTargetVertex().equals(terminatingStation)) {
-                    currentMatches += 1;
-                }
-                currentMatches = depthFirstTraversal(route.getTargetVertex(), terminatingStation, distanceRemaining - route.getWeight(), matches);
-            }
-        }
-        return currentMatches;
     }
 
     public static class RailwayNetworkBuilder {

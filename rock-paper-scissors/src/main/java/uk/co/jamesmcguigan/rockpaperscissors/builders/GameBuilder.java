@@ -4,10 +4,10 @@ import uk.co.jamesmcguigan.rockpaperscissors.models.Game;
 import uk.co.jamesmcguigan.rockpaperscissors.models.Player;
 
 public class GameBuilder {
+    private final String result = "Player 1 Wins: Rock blunt Scissors";
     private Game game = new Game();
     private Player player1 = new Player();
     private Player player2 = new Player();
-    private String result = "Player 1 Wins: Rock blunt Scissors";
 
     public Game getGame() {
         return game;

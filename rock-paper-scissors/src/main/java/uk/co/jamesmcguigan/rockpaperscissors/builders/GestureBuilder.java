@@ -1,15 +1,14 @@
 package uk.co.jamesmcguigan.rockpaperscissors.builders;
 
-import uk.co.jamesmcguigan.rockpaperscissors.models.Gesture;
-
 import java.util.LinkedList;
 
-public class GestureBuilder {
-    private LinkedList<Gesture> gestures = new LinkedList<Gesture>();
+import uk.co.jamesmcguigan.rockpaperscissors.models.Gesture;
 
-    private Gesture gestureRock = new Gesture("Rock");
-    private Gesture gesturePaper = new Gesture("Paper");
-    private Gesture gestureScissors = new Gesture("Scissors");
+public class GestureBuilder {
+    private final Gesture gestureRock = new Gesture("Rock");
+    private final Gesture gesturePaper = new Gesture("Paper");
+    private final Gesture gestureScissors = new Gesture("Scissors");
+    private LinkedList<Gesture> gestures = new LinkedList<Gesture>();
 
     public void createGestureCollection() {
         LinkedList<Gesture> gestures = new LinkedList<Gesture>();

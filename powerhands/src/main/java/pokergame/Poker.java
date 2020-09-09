@@ -5,27 +5,27 @@ import java.util.List;
 
 public class Poker {
 
-  public List<Card> getCards() {
-    return cards;
-  }
+    private List<Card> cards;
 
-  private List<Card> cards;
+    public Poker(List<Card> cards) {
+        this.cards = cards;
+    }
 
-  public Poker(List<Card> cards) {
-    this.cards = cards;
-  }
+    public List<Card> getCards() {
+        return cards;
+    }
 
-  public List<Card> dealCards() {
-    shuffleCards();
-    return pickFiveCards();
-  }
+    public List<Card> dealCards() {
+        shuffleCards();
+        return pickFiveCards();
+    }
 
-  private List<Card> pickFiveCards() {
-    return cards.subList(0, 5);
-  }
+    private List<Card> pickFiveCards() {
+        return cards.subList(0, 5);
+    }
 
-  private void shuffleCards() {
-    Collections.shuffle(cards);
-  }
+    private void shuffleCards() {
+        Collections.shuffle(cards);
+    }
 
 }

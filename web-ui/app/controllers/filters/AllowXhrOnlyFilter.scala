@@ -10,12 +10,6 @@ import scala.concurrent.Future
  */
 trait AllowXhrOnlyFilter extends StackableFilter with Results {
 
-  private def headerName: String = "X-Requested-With"
-
-  def resultIfNotXhrRequest[A](request: RequestWithAttributes[A]): Future[Result] = {
-    Future.successful(BadRequest("Not XMLHttpRequest !!"))
-  }
-
   abstract override def filter[A](request: RequestWithAttributes[A])(f: (RequestWithAttributes[A]) => Future[Result]): Future[Result] = {
     if (isAjaxRequest(request)) {
       super.filter(request)(f)
@@ -24,8 +18,14 @@ trait AllowXhrOnlyFilter extends StackableFilter with Results {
     }
   }
 
+  def resultIfNotXhrRequest[A](request: RequestWithAttributes[A]): Future[Result] = {
+    Future.successful(BadRequest("Not XMLHttpRequest !!"))
+  }
+
   def isAjaxRequest(request: RequestWithAttributes[_]): Boolean = {
     request.headers.get(headerName).isDefined
   }
+
+  private def headerName: String = "X-Requested-With"
 
 }

@@ -1,10 +1,10 @@
 package uk.co.jamesmcguigan.rockpaperscissors.services;
 
+import java.util.LinkedList;
+
 import uk.co.jamesmcguigan.rockpaperscissors.builders.WinningCombinationBuilder;
 import uk.co.jamesmcguigan.rockpaperscissors.models.Game;
 import uk.co.jamesmcguigan.rockpaperscissors.models.WinningCombination;
-
-import java.util.LinkedList;
 
 public class GameService implements IGameService {
     private IGestureService gestureService;

@@ -12,7 +12,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -35,15 +34,12 @@ public class PaperRockScissorsSteps implements SauceOnDemandSessionIdProvider {
     private static final String WINNING_PLAYER = "winning-player";
     private static final String PLAY_GAME = "play-game";
     private static final String WINNING_PLAYER1 = "winning-player";
-    private final SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USER_NAME, KEY);
-
-    @Rule
-    public SauceOnDemandTestWatcher resultReportingTestWatcher = new SauceOnDemandTestWatcher(this, authentication);
-
     private static final String USER_NAME = "modernmaster";
     private static final String KEY = "51ad2d68-61b9-4b0d-aac3-198713991a44";
     private static final String URL = String.format("http://%s:%s@ondemand.saucelabs.com:80/wd/hub", USER_NAME, KEY);
-
+    private final SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(USER_NAME, KEY);
+    @Rule
+    public SauceOnDemandTestWatcher resultReportingTestWatcher = new SauceOnDemandTestWatcher(this, authentication);
     private WebDriver webDriver;
     private SessionId sessionId;
 

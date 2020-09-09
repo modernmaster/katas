@@ -3,6 +3,6 @@ engines:
   fixme:
     enabled: true
 ratings:
-  paths: []
+  paths: [ ]
 exclude_paths:
-- config/
+  - config/

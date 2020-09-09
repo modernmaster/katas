@@ -5,17 +5,17 @@ import java.util.List;
 
 class BallotBox {
 
-  private List<Vote> votes;
+    private final List<Vote> votes;
 
-  BallotBox() {
-    this.votes = new ArrayList<>();
-  }
+    BallotBox() {
+        this.votes = new ArrayList<>();
+    }
 
-  public void addVote(final Vote vote) {
-    votes.add(vote);
-  }
+    public void addVote(final Vote vote) {
+        votes.add(vote);
+    }
 
-  List<Vote> emptyBox() {
-    return votes;
-  }
+    List<Vote> emptyBox() {
+        return votes;
+    }
 }

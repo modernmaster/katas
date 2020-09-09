@@ -1,12 +1,9 @@
 import org.openqa.selenium.phantomjs.{PhantomJSDriver, PhantomJSDriverService}
-import org.openqa.selenium.remote.DesiredCapabilities
 import org.specs2.execute.{AsResult, Result}
 import org.specs2.mutable.Around
 import org.specs2.specification.Scope
 import play.api.test.Helpers._
-import play.api.test.{FakeApplication, TestBrowser, TestServer}
-
-import scala.util.Try
+import play.api.test.TestBrowser
 
 abstract class WithPhantomJS() extends Around with Scope {
 
@@ -25,10 +22,10 @@ abstract class WithPhantomJS() extends Around with Scope {
   }
 
   override def around[T: AsResult](body: => T): Result = {
-//    try {
-      running(TestServer(port, app))(AsResult.effectively(body))
-//    } finally {
-//      browser.quit()
-//    }
+    //    try {
+    running(TestServer(port, app))(AsResult.effectively(body))
+    //    } finally {
+    //      browser.quit()
+    //    }
   }
 }

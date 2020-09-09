@@ -7,18 +7,18 @@ import java.util.List;
 public class Player {
 
 
-  public void setDealCards(List<Card> dealCards) {
-    this.dealCards = dealCards;
-  }
+    private List<Card> dealCards;
 
-  private List<Card> dealCards;
+    public List<Card> getDealCards() {
+        return dealCards;
 
-  public List<Card> getDealCards() {
-    return dealCards;
+    }
 
-  }
+    public void setDealCards(List<Card> dealCards) {
+        this.dealCards = dealCards;
+    }
 
-  public void sortDealCards() {
-    Collections.sort(dealCards);
-  }
+    public void sortDealCards() {
+        Collections.sort(dealCards);
+    }
 }
