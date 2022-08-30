@@ -1,6 +1,7 @@
 package uk.co.jamesmcguigan.dequeue;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 public class Deque {
 
@@ -32,7 +33,7 @@ public class Deque {
     public String removeFirst() {
         if (first == null) {
             throw new NullPointerException();
-        } else if(first == last) {
+        } else if (first == last) {
             first = null;
             last = null;
         }
@@ -44,7 +45,7 @@ public class Deque {
     public String removeLast() {
         if (last == null) {
             throw new NullPointerException();
-        } else if(first == last) {
+        } else if (first == last) {
             first = null;
             last = null;
         }
@@ -82,15 +83,12 @@ public class Deque {
     }
 
     @Getter
+    @RequiredArgsConstructor
     static class Node {
 
         private final String value;
         private Node next;
         private Node prev;
-
-        public Node(String value) {
-            this.value = value;
-        }
 
         void setNext(Node node) {
             next = node;

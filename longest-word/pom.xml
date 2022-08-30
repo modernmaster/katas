@@ -12,6 +12,7 @@
     <artifactId>longest-word</artifactId>
 
     <properties>
+        <multiproject.basedir>${basedir}/..</multiproject.basedir>
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
     </properties>

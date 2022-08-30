@@ -2,32 +2,32 @@ package pokergame;
 
 public class Card implements Comparable {
 
-  public Card(Card.value value, Card.suit suit) {
-    this.value = value;
-    this.suit = suit;
-  }
+  private VALUE value;
 
   public int compareTo(Object o) {
     Card objP = (Card) o;
     return this.getValue().ordinal() - objP.getValue().ordinal();
   }
 
-  private value value;
-  private suit suit;
-
-  public enum value {
-    TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
+  public Card(VALUE value, SUIT suit) {
+    this.value = value;
+    this.suit = suit;
   }
+  private SUIT suit;
 
-  public value getValue() {
+  public VALUE getValue() {
     return value;
   }
 
-  public enum suit {
+  public enum VALUE {
+    TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
+  }
+
+  public enum SUIT {
     HEARTS, SPADES, CLUBS, DIAMONDS;
   }
 
-  public suit getSuit() {
+  public SUIT getSuit() {
     return suit;
   }
 
