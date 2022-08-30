@@ -10,6 +10,7 @@ public class Poker {
   }
 
   private List<Card> cards;
+  private static final int FIVE_CARDS = 5;
 
   public Poker(List<Card> cards) {
     this.cards = cards;
@@ -21,7 +22,7 @@ public class Poker {
   }
 
   private List<Card> pickFiveCards() {
-    return cards.subList(0, 5);
+    return cards.subList(0, FIVE_CARDS);
   }
 
   private void shuffleCards() {
