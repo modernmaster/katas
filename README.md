@@ -188,6 +188,19 @@ Output #10: 7
 
 +--------------------------------------------------+
 
+### 1.4 GS - Longest word
+
+Given a string of letters and a dictionary, the function longestWord should find the longest word or words in the dictionary that can be made from the given letters
+*     Input: letters = "oet", dictionary = {"to","toe","toes"}
+*     Output: {"toe"}
+
+### 1.5 GS - Double ended queue
+
+Implement a double-ended queue (abbreviated to deque) that stores strings.  A deque is a data structure that has characteristics of both a queue and a stack. Elements can be added or removed from either the front or back.
+
+### 1.6 G - Election
+
+At any time during an election, write a solution that will find who is currently winning.
 
 ## 2 Testing
 
