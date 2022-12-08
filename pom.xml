@@ -511,6 +511,7 @@
         <module>best-route</module>
         <module>fizz-buzz</module>
         <module>election</module>
+        <module>powerhands</module>
         <module>Deque</module>
         <module>longest-word</module>
         <!--        <module>web-ui</module>-->

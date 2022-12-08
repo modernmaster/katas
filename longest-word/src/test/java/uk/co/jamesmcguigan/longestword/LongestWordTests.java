@@ -45,4 +45,12 @@ public class LongestWordTests {
         assertEquals(expected, LongestWord.calculate("osetdg", dict));
     }
 
+    @Test
+    public void testLongestWordForDictionarySizeNineThatMatchesTwoEntriesWithWildcard() {
+        Dictionary dict = new Dictionary(new String[]{"to", "toe", "toes", "doe", "dog", "god", "dogs", "book", "banana"});
+        Set<String> expected = new HashSet<>(List.of("toes", "dogs"));
+        assertEquals(expected, LongestWord.calculate("oset?g", dict));
+    }
+
+
 }
