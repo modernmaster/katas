@@ -202,6 +202,31 @@ Implement a double-ended queue (abbreviated to deque) that stores strings.  A de
 
 At any time during an election, write a solution that will find who is currently winning.
 
+### 1.7 String contains
+
+You are given an integer N, followed by at least N lines of input (1<=N<=100).  Each line of input contains two words which are separated by space.  Each word will contain at most 100 characters.  Both words contain only english lowercase letters.
+
+Your task is to process only N lines of input and for each line, you need to determine if you can construct the first word using the letters from the second word.  If tru, out "YES".  If false, output "NO".
+
+Input: 
+```
+     5
+     hello eelloh
+     aa ab
+     aaa aba
+     abcd daabbcc
+     abcd aefgh
+```     
+Output:
+```
+     YES
+     NO
+     NO
+     YES 
+     NO
+```
+
+
 ## 2 Testing
 
 -- TBD
