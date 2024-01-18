@@ -226,6 +226,23 @@ Output:
      NO
 ```
 
+### 1.8 Dictionary
+
+Write a program to output the number of words contained in the input file “Input.txt”. A word should be considered as any sequence of characters delimited by white space or ordinary English punctuation marks. Output the count to the console.
+
+Write a program to output a list of the words contained in the input file to the output file “output.txt”. Each word should appear on a separate line and the list of words should not contain duplicates.
+
+Extend your solution to 2b so that the ouptut is sorted in alphabetic order. Also Capitalise Each Word Like This.
+
+Extend your solution to output the same list as in part 2b but with a count of occurrences of each word. The output should be formatted as follows:
+
+* Bar 3 
+* Buff 7
+* Foo 5
+* Frobnicate 5
+
+With the count 5 chars to the right of the longest word, and with the count numeric aligned to the right.
+
 
 ## 2 Testing
 

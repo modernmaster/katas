@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dictionary
+logging:
+  level:
+    root: ERROR
+    uk:
+      co:
+        jamesmcguigan:
+          dictionary: INFO
